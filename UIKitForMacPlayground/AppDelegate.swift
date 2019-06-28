@@ -38,6 +38,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
     }
 
+    override func buildCommands(with builder: UICommandBuilder) {
+        builder.insertChild(UICommandGroup(
+            __title: "TEST GROUP",
+            discoverabilityTitle: "Group",
+            identifier: UIMenu.Identifier("hey"),
+            options: [],
+            children: [
+                UIKeyCommand(
+                    input: "A",
+                    modifierFlags: [.command],
+                    action: #selector(AppDelegate.testSelected(_:))
+                )
+            ]
+        ), atEndOfGroup: .file)
+    }
 
+    @objc private func testSelected(_ sender: AppDelegate) {
+        print("TEST!!")
+    }
 }
 

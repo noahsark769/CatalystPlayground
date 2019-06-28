@@ -17,7 +17,7 @@ class ViewController: UIViewController, NSTouchBarProvider {
         bar.templateItems = [
             NSButtonTouchBarItem(
                 identifier: identifier,
-                title: "Click me",
+                title: "😥",
                 target: self,
                 action: #selector(didTapClickMe(_:))
             )
@@ -36,7 +36,17 @@ class ViewController: UIViewController, NSTouchBarProvider {
     }
 
     override func buildCommands(with builder: UICommandBuilder) {
-        <#code#>
+        let newMenu = UIMenu(
+            __title: "Custom menu",
+            image: UIImage(systemName: "hurricane"),
+            identifier: UIMenu.Identifier("customidentifier"),
+            options: [], children: [
+                UIAction(__title: "HEY", image: UIImage(systemName: "hurricane"), options: []) { action in
+                    print("Clicked HEY")
+                }
+            ]
+        )
+        builder.insertChild(newMenu, atEndOfMenu: .file)
     }
 }
 
