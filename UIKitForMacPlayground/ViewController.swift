@@ -36,17 +36,23 @@ class ViewController: UIViewController, NSTouchBarProvider {
     }
 
     override func buildCommands(with builder: UICommandBuilder) {
-        let newMenu = UIMenu(
-            __title: "Custom menu",
-            image: UIImage(systemName: "hurricane"),
-            identifier: UIMenu.Identifier("customidentifier"),
-            options: [], children: [
-                UIAction(__title: "HEY", image: UIImage(systemName: "hurricane"), options: []) { action in
-                    print("Clicked HEY")
-                }
+        builder.insertChild(UICommandGroup(
+            __title: "TEST GROUP 2",
+            discoverabilityTitle: "Group 2",
+            identifier: UIMenu.Identifier("hey2"),
+            options: [],
+            children: [
+                UIKeyCommand(
+                    input: "R",
+                    modifierFlags: [.command],
+                    action: #selector(ViewController.testSelected(_:))
+                )
             ]
-        )
-        builder.insertChild(newMenu, atEndOfMenu: .file)
+        ), atEndOfGroup: .file)
+    }
+
+    @objc private func testSelected(_ sender: AppDelegate) {
+        print("TEST!!")
     }
 }
 

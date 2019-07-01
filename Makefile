@@ -3,7 +3,7 @@ bundle:
 	bundle install --path vendor/bundle
 
 .PHONY: pods
-pods:
+pods: bundle
 	bundle exec pod install
 
 .PHONY: pods-update
