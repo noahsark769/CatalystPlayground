@@ -6,5 +6,5 @@ target 'UIKitForMacPlayground' do
   use_frameworks!
 
   # Pods for UIKitForMacPlayground
-  pod 'ReactiveLists', '~> 0.3.0'
+  pod 'ReactiveLists', '~> 0.5.1'
 end

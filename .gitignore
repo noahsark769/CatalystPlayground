@@ -4,6 +4,7 @@
 vendor/
 .bundle/
 Pods/
+xcuserdata/
 
 ## Build generated
 build/

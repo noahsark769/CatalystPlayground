@@ -1,15 +1,15 @@
 PODS:
-  - DifferenceKit (0.6.0):
-    - DifferenceKit/Core (= 0.6.0)
-    - DifferenceKit/UIKitExtension (= 0.6.0)
-  - DifferenceKit/Core (0.6.0)
-  - DifferenceKit/UIKitExtension (0.6.0):
+  - DifferenceKit (1.1.2):
+    - DifferenceKit/Core (= 1.1.2)
+    - DifferenceKit/UIKitExtension (= 1.1.2)
+  - DifferenceKit/Core (1.1.2)
+  - DifferenceKit/UIKitExtension (1.1.2):
     - DifferenceKit/Core
-  - ReactiveLists (0.3.0):
-    - DifferenceKit (~> 0.6.0)
+  - ReactiveLists (0.5.1):
+    - DifferenceKit (~> 1.1.0)
 
 DEPENDENCIES:
-  - ReactiveLists (~> 0.3.0)
+  - ReactiveLists (~> 0.5.1)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -17,9 +17,9 @@ SPEC REPOS:
     - ReactiveLists
 
 SPEC CHECKSUMS:
-  DifferenceKit: 824ab6ecd2a20cc658071b2c0c071114cf91e4c9
-  ReactiveLists: 383c6720617abfb9bd47e8e612bfc13e1895eda5
+  DifferenceKit: 3a1cff9ac9a9cdf2a3f205671067797e83c3f066
+  ReactiveLists: e079707255026c1daa421e1b4ec1ede9f0e6b2dc
 
-PODFILE CHECKSUM: cf2bf55ab9e78e5671f416efe8c7b7fa4813ea6e
+PODFILE CHECKSUM: df6ae08f28130a94f90f5dcb1b756ef47e918d77
 
 COCOAPODS: 1.7.3

@@ -7,6 +7,15 @@
 //
 
 import UIKit
+import AppKit
+
+// Hacky stuff as per https://stackoverflow.com/questions/27243158/hiding-the-master-view-controller-with-uisplitviewcontroller-in-ios8
+extension UISplitViewController {
+    func toggleMasterView() {
+        let barButtonItem = self.displayModeButtonItem
+        UIApplication.shared.sendAction(barButtonItem.action!, to: barButtonItem.target, from: nil, for: nil)
+    }
+}
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
@@ -18,8 +27,23 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         guard let scene = (scene as? UIWindowScene) else { return }
+
+        let splitViewController = UISplitViewController()
+        let listViewController = ListViewController()
+        let navController = UINavigationController(rootViewController: listViewController)
+        navController.navigationBar.prefersLargeTitles = true
+        let viewController = ViewController()
+        viewController.navigationItem.leftBarButtonItem = splitViewController.displayModeButtonItem
+        viewController.navigationItem.leftItemsSupplementBackButton = true
+        viewController.navigationItem.largeTitleDisplayMode = .never
+        let detailNavController = UINavigationController(rootViewController: viewController)
+        splitViewController.viewControllers = [navController, detailNavController]
+        splitViewController.delegate = self
+        splitViewController.primaryBackgroundStyle = .sidebar
+
         window = UIWindow(windowScene: scene)
-        window?.rootViewController = ViewController()
+//        window?.rootViewController = ViewController()
+        window?.rootViewController = splitViewController
         window?.makeKeyAndVisible()
     }
 
@@ -50,7 +74,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Use this method to save data, release shared resources, and store enough scene-specific state information
         // to restore the scene back to its current state.
     }
-
-
 }
 
+extension SceneDelegate: UISplitViewControllerDelegate {
+    func splitViewController(_ splitViewController: UISplitViewController, collapseSecondary secondaryViewController: UIViewController, onto primaryViewController: UIViewController) -> Bool {
+        return true
+    }
+}
