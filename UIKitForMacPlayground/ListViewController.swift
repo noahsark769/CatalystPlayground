@@ -9,6 +9,11 @@
 import Foundation
 import ReactiveLists
 
+enum DetailType: String, CaseIterable {
+    case keyboardShortcuts = "Keyboard Shortcuts"
+    case windows = "Windows"
+}
+
 struct CellViewModel: TableCellViewModel {
     var accessibilityFormat: CellAccessibilityFormat {
         return CellAccessibilityFormat(self.title)
@@ -28,6 +33,13 @@ struct CellViewModel: TableCellViewModel {
             self.action()
         }
     }
+
+    init(detailType: DetailType, didSelect: @escaping (DetailType) -> Void) {
+        self.title = detailType.rawValue
+        self.action = {
+            didSelect(detailType)
+        }
+    }
 }
 
 final class ListViewController: UITableViewController {
@@ -35,22 +47,18 @@ final class ListViewController: UITableViewController {
 
     private func generateTableModel(searchText: String?) -> TableViewModel {
         return TableViewModel(sectionModels: [
-            TableSectionViewModel(diffingKey: "section", cellViewModels: [
-                CellViewModel(title: "Keyboard shortcuts", action: {
-                    print("Something")
-                }),
-                CellViewModel(title: "Windows", action: {
-                    print("Something")
-                })
-            ])
+            TableSectionViewModel(diffingKey: "section", cellViewModels: DetailType.allCases.map { type in
+                return CellViewModel(detailType: type, didSelect: self.didSelectDetailType)
+            })
         ])
     }
 
-    init() {
+    let didSelectDetailType: (DetailType) -> Void
+
+    init(didSelectDetailType: @escaping (DetailType) -> Void) {
+        self.didSelectDetailType = didSelectDetailType
         super.init(style: .insetGrouped)
         self.title = "Examples"
-        self.definesPresentationContext = true
-        self.tableView.separatorStyle = .none
 
         driver = TableViewDriver(
             tableView: self.tableView,

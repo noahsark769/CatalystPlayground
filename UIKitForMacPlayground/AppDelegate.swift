@@ -10,9 +10,6 @@ import UIKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
-
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         return true
@@ -39,23 +36,30 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     override func buildCommands(with builder: UICommandBuilder) {
+        let command = UIKeyCommand(
+            input: "J",
+            modifierFlags: [.command],
+            action: #selector(self.jumpSelected(_:))
+        )
+        command.title = "Jump to Windows"
         builder.insertChild(UICommandGroup(
-            __title: "TEST GROUP",
+            __title: "Jump",
             discoverabilityTitle: "Group",
             identifier: UIMenu.Identifier("hey"),
             options: [],
             children: [
-                UIKeyCommand(
-                    input: "A",
-                    modifierFlags: [.command],
-                    action: #selector(AppDelegate.testSelected(_:))
-                )
+                command
             ]
-        ), atEndOfGroup: .file)
+        ), atEndOfGroup: .view)
     }
 
-    @objc private func testSelected(_ sender: AppDelegate) {
-        print("TEST!!")
+    @objc private func jumpSelected(_ sender: AppDelegate) {
+        guard let delegate = UIApplication.shared.connectedScenes.compactMap({
+            ($0 as? UIWindowScene)
+        }).filter({ $0.activationState == .foregroundActive })
+            .first?.delegate else { return }
+        guard let sceneDelegate = delegate as? SceneDelegate else { return }
+        sceneDelegate.handleDetailType(.windows)
     }
 }
 

@@ -7,7 +7,10 @@
 //
 
 import UIKit
+#if targetEnvironment(UIKitForMac)
 import AppKit
+#endif
+import CoreImage
 
 // Hacky stuff as per https://stackoverflow.com/questions/27243158/hiding-the-master-view-controller-with-uisplitviewcontroller-in-ios8
 extension UISplitViewController {
@@ -29,7 +32,17 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let scene = (scene as? UIWindowScene) else { return }
 
         let splitViewController = UISplitViewController()
-        let listViewController = ListViewController()
+        let listViewController = ListViewController(didSelectDetailType: { type in
+            let viewController = ViewController()
+            viewController.navigationItem.leftBarButtonItem = splitViewController.displayModeButtonItem
+            viewController.navigationItem.leftItemsSupplementBackButton = true
+            viewController.navigationItem.largeTitleDisplayMode = .never
+            let detailNavController = UINavigationController(rootViewController: viewController)
+            splitViewController.showDetailViewController(detailNavController, sender: self)
+            if viewController.canBecomeFirstResponder {
+                viewController.becomeFirstResponder()
+            }
+        })
         let navController = UINavigationController(rootViewController: listViewController)
         navController.navigationBar.prefersLargeTitles = true
         let viewController = ViewController()
@@ -42,9 +55,15 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         splitViewController.primaryBackgroundStyle = .sidebar
 
         window = UIWindow(windowScene: scene)
-//        window?.rootViewController = ViewController()
         window?.rootViewController = splitViewController
         window?.makeKeyAndVisible()
+    }
+
+    func handleDetailType(_ detailType: DetailType) {
+        guard let splitViewController = window?.rootViewController as? UISplitViewController else { return }
+        guard let navigationController = splitViewController.viewControllers.first as? UINavigationController else { return }
+        guard let listViewController = navigationController.topViewController as? ListViewController else { return }
+        listViewController.didSelectDetailType(detailType)
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
@@ -73,6 +92,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Called as the scene transitions from the foreground to the background.
         // Use this method to save data, release shared resources, and store enough scene-specific state information
         // to restore the scene back to its current state.
+    }
+
+    func windowScene(_ windowScene: UIWindowScene, didUpdate previousCoordinateSpace: UICoordinateSpace, interfaceOrientation previousInterfaceOrientation: UIInterfaceOrientation, traitCollection previousTraitCollection: UITraitCollection) {
+        print("Old: \(previousCoordinateSpace), new: \(windowScene.coordinateSpace)")
     }
 }
 
