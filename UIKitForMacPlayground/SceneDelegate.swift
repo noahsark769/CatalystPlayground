@@ -66,7 +66,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     func viewController(forDetailType type: DetailType) -> UIViewController {
         switch type {
-        case .windows: return WindowsViewController()
+        case .windows:
+            return WindowsViewController()
+        case .hover:
+            return HoverViewController()
         default:
             return ViewController()
         }

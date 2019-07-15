@@ -19,6 +19,9 @@
 		A1D8879C22DCA1AA007C73ED /* ExamplesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1D8879B22DCA1AA007C73ED /* ExamplesViewController.swift */; };
 		A1D8879E22DCA1F6007C73ED /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1D8879D22DCA1F6007C73ED /* HeaderView.swift */; };
 		A1D887A022DCA20B007C73ED /* UserActivities.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1D8879F22DCA20B007C73ED /* UserActivities.swift */; };
+		A1D887A222DCA24E007C73ED /* HoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1D887A122DCA24E007C73ED /* HoverViewController.swift */; };
+		A1D887A422DCA275007C73ED /* HoverExampleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1D887A322DCA275007C73ED /* HoverExampleView.swift */; };
+		A1D887A622DCA299007C73ED /* ColorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1D887A522DCA299007C73ED /* ColorView.swift */; };
 		B96C579B73CBD88DAF015B1D /* Pods_UIKitForMacPlayground.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 67B3C60BFC993E73C93CC8E0 /* Pods_UIKitForMacPlayground.framework */; };
 /* End PBXBuildFile section */
 
@@ -40,6 +43,9 @@
 		A1D8879B22DCA1AA007C73ED /* ExamplesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExamplesViewController.swift; sourceTree = "<group>"; };
 		A1D8879D22DCA1F6007C73ED /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		A1D8879F22DCA20B007C73ED /* UserActivities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserActivities.swift; sourceTree = "<group>"; };
+		A1D887A122DCA24E007C73ED /* HoverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HoverViewController.swift; sourceTree = "<group>"; };
+		A1D887A322DCA275007C73ED /* HoverExampleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HoverExampleView.swift; sourceTree = "<group>"; };
+		A1D887A522DCA299007C73ED /* ColorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorView.swift; sourceTree = "<group>"; };
 		A793676ECB32AE0CCFB9C6EA /* Pods-UIKitForMacPlayground.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UIKitForMacPlayground.debug.xcconfig"; path = "Target Support Files/Pods-UIKitForMacPlayground/Pods-UIKitForMacPlayground.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -107,6 +113,9 @@
 				A1D8879B22DCA1AA007C73ED /* ExamplesViewController.swift */,
 				A1D8879D22DCA1F6007C73ED /* HeaderView.swift */,
 				A1D8879F22DCA20B007C73ED /* UserActivities.swift */,
+				A1D887A122DCA24E007C73ED /* HoverViewController.swift */,
+				A1D887A322DCA275007C73ED /* HoverExampleView.swift */,
+				A1D887A522DCA299007C73ED /* ColorView.swift */,
 			);
 			path = UIKitForMacPlayground;
 			sourceTree = "<group>";
@@ -225,13 +234,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A1D887A422DCA275007C73ED /* HoverExampleView.swift in Sources */,
 				A116368F22C520AD0020072C /* ViewController.swift in Sources */,
 				A1D8879E22DCA1F6007C73ED /* HeaderView.swift in Sources */,
+				A1D887A622DCA299007C73ED /* ColorView.swift in Sources */,
 				A116368B22C520AD0020072C /* AppDelegate.swift in Sources */,
 				A1D887A022DCA20B007C73ED /* UserActivities.swift in Sources */,
 				A1A1A69322CB0D97003B81A7 /* ListViewController.swift in Sources */,
 				A116117322D003B000251B87 /* WindowsViewController.swift in Sources */,
 				A1D8877722DC3D3B007C73ED /* SquareSceneDelegate.swift in Sources */,
+				A1D887A222DCA24E007C73ED /* HoverViewController.swift in Sources */,
 				A1D8879C22DCA1AA007C73ED /* ExamplesViewController.swift in Sources */,
 				A1D8879A22DCA178007C73ED /* HashableIdGenerator.swift in Sources */,
 				A116368D22C520AD0020072C /* SceneDelegate.swift in Sources */,

@@ -12,6 +12,7 @@ import ReactiveLists
 enum DetailType: String, CaseIterable {
     case keyboardShortcuts = "Keyboard Shortcuts"
     case windows = "Windows"
+    case hover = "Hover"
 }
 
 struct CellViewModel: TableCellViewModel {
