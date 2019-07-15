@@ -25,8 +25,34 @@
 		A1D887A822DCB108007C73ED /* DragAndDropViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1D887A722DCB108007C73ED /* DragAndDropViewController.swift */; };
 		A1D887AA22DCB167007C73ED /* DragExampleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1D887A922DCB167007C73ED /* DragExampleView.swift */; };
 		A1D887AC22DCB27F007C73ED /* DropExampleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1D887AB22DCB27F007C73ED /* DropExampleView.swift */; };
+		A1D887B922DCC9F3007C73ED /* AppKitPrincipal.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1D887B822DCC9F3007C73ED /* AppKitPrincipal.swift */; };
+		A1D887BA22DCCA42007C73ED /* UIKitForMacPlaygroundSupportingBundle.bundle in Embed PlugIns */ = {isa = PBXBuildFile; fileRef = A1D887B122DCC874007C73ED /* UIKitForMacPlaygroundSupportingBundle.bundle */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B96C579B73CBD88DAF015B1D /* Pods_UIKitForMacPlayground.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 67B3C60BFC993E73C93CC8E0 /* Pods_UIKitForMacPlayground.framework */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		A1D887BB22DCCA42007C73ED /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A116367F22C520AD0020072C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A1D887B022DCC874007C73ED;
+			remoteInfo = UIKitForMacPlaygroundSupportingBundle;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		A1D887BD22DCCA42007C73ED /* Embed PlugIns */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				A1D887BA22DCCA42007C73ED /* UIKitForMacPlaygroundSupportingBundle.bundle in Embed PlugIns */,
+			);
+			name = "Embed PlugIns";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		417486A30CE1D0BCFC3EB3F4 /* Pods-UIKitForMacPlayground.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UIKitForMacPlayground.release.xcconfig"; path = "Target Support Files/Pods-UIKitForMacPlayground/Pods-UIKitForMacPlayground.release.xcconfig"; sourceTree = "<group>"; };
@@ -52,6 +78,10 @@
 		A1D887A722DCB108007C73ED /* DragAndDropViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DragAndDropViewController.swift; sourceTree = "<group>"; };
 		A1D887A922DCB167007C73ED /* DragExampleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DragExampleView.swift; sourceTree = "<group>"; };
 		A1D887AB22DCB27F007C73ED /* DropExampleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropExampleView.swift; sourceTree = "<group>"; };
+		A1D887B122DCC874007C73ED /* UIKitForMacPlaygroundSupportingBundle.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UIKitForMacPlaygroundSupportingBundle.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
+		A1D887B322DCC874007C73ED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A1D887B722DCC9F3007C73ED /* UIKitForMacPlaygroundSupportingBundle-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIKitForMacPlaygroundSupportingBundle-Bridging-Header.h"; sourceTree = "<group>"; };
+		A1D887B822DCC9F3007C73ED /* AppKitPrincipal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppKitPrincipal.swift; sourceTree = "<group>"; };
 		A793676ECB32AE0CCFB9C6EA /* Pods-UIKitForMacPlayground.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UIKitForMacPlayground.debug.xcconfig"; path = "Target Support Files/Pods-UIKitForMacPlayground/Pods-UIKitForMacPlayground.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -61,6 +91,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				B96C579B73CBD88DAF015B1D /* Pods_UIKitForMacPlayground.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A1D887AE22DCC874007C73ED /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -88,6 +125,7 @@
 			isa = PBXGroup;
 			children = (
 				A116368922C520AD0020072C /* UIKitForMacPlayground */,
+				A1D887B222DCC874007C73ED /* UIKitForMacPlaygroundSupportingBundle */,
 				A116368822C520AD0020072C /* Products */,
 				27FF9F9969858C90A708E2B4 /* Pods */,
 				12C4E70C679440A52759DFC1 /* Frameworks */,
@@ -98,6 +136,7 @@
 			isa = PBXGroup;
 			children = (
 				A116368722C520AD0020072C /* UIKitForMacPlayground.app */,
+				A1D887B122DCC874007C73ED /* UIKitForMacPlaygroundSupportingBundle.bundle */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -129,6 +168,16 @@
 			path = UIKitForMacPlayground;
 			sourceTree = "<group>";
 		};
+		A1D887B222DCC874007C73ED /* UIKitForMacPlaygroundSupportingBundle */ = {
+			isa = PBXGroup;
+			children = (
+				A1D887B322DCC874007C73ED /* Info.plist */,
+				A1D887B822DCC9F3007C73ED /* AppKitPrincipal.swift */,
+				A1D887B722DCC9F3007C73ED /* UIKitForMacPlaygroundSupportingBundle-Bridging-Header.h */,
+			);
+			path = UIKitForMacPlaygroundSupportingBundle;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -141,15 +190,34 @@
 				A116368422C520AD0020072C /* Frameworks */,
 				A116368522C520AD0020072C /* Resources */,
 				F33872B19FF7D6EE084D244F /* [CP] Embed Pods Frameworks */,
+				A1D887BD22DCCA42007C73ED /* Embed PlugIns */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				A1D887BC22DCCA42007C73ED /* PBXTargetDependency */,
 			);
 			name = UIKitForMacPlayground;
 			productName = UIKitForMacPlayground;
 			productReference = A116368722C520AD0020072C /* UIKitForMacPlayground.app */;
 			productType = "com.apple.product-type.application";
+		};
+		A1D887B022DCC874007C73ED /* UIKitForMacPlaygroundSupportingBundle */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A1D887B422DCC874007C73ED /* Build configuration list for PBXNativeTarget "UIKitForMacPlaygroundSupportingBundle" */;
+			buildPhases = (
+				A1D887AD22DCC874007C73ED /* Sources */,
+				A1D887AE22DCC874007C73ED /* Frameworks */,
+				A1D887AF22DCC874007C73ED /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = UIKitForMacPlaygroundSupportingBundle;
+			productName = UIKitForMacPlaygroundSupportingBundle;
+			productReference = A1D887B122DCC874007C73ED /* UIKitForMacPlaygroundSupportingBundle.bundle */;
+			productType = "com.apple.product-type.bundle";
 		};
 /* End PBXNativeTarget section */
 
@@ -163,6 +231,10 @@
 				TargetAttributes = {
 					A116368622C520AD0020072C = {
 						CreatedOnToolsVersion = 11.0;
+					};
+					A1D887B022DCC874007C73ED = {
+						CreatedOnToolsVersion = 11.0;
+						LastSwiftMigration = 1100;
 					};
 				};
 			};
@@ -180,6 +252,7 @@
 			projectRoot = "";
 			targets = (
 				A116368622C520AD0020072C /* UIKitForMacPlayground */,
+				A1D887B022DCC874007C73ED /* UIKitForMacPlaygroundSupportingBundle */,
 			);
 		};
 /* End PBXProject section */
@@ -191,6 +264,13 @@
 			files = (
 				A116369722C520AF0020072C /* LaunchScreen.storyboard in Resources */,
 				A116369422C520AF0020072C /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A1D887AF22DCC874007C73ED /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -262,7 +342,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		A1D887AD22DCC874007C73ED /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A1D887B922DCC9F3007C73ED /* AppKitPrincipal.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		A1D887BC22DCCA42007C73ED /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A1D887B022DCC874007C73ED /* UIKitForMacPlaygroundSupportingBundle */;
+			targetProxy = A1D887BB22DCCA42007C73ED /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		A116369522C520AF0020072C /* LaunchScreen.storyboard */ = {
@@ -434,6 +530,57 @@
 			};
 			name = Release;
 		};
+		A1D887B522DCC874007C73ED /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 29P3YRFLV5;
+				INFOPLIST_FILE = UIKitForMacPlaygroundSupportingBundle/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				PRODUCT_BUNDLE_IDENTIFIER = com.noahgilmore.UIKitForMacPlaygroundSupportingBundle;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "UIKitForMacPlaygroundSupportingBundle/UIKitForMacPlaygroundSupportingBundle-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Debug;
+		};
+		A1D887B622DCC874007C73ED /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 29P3YRFLV5;
+				INFOPLIST_FILE = UIKitForMacPlaygroundSupportingBundle/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				PRODUCT_BUNDLE_IDENTIFIER = com.noahgilmore.UIKitForMacPlaygroundSupportingBundle;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "UIKitForMacPlaygroundSupportingBundle/UIKitForMacPlaygroundSupportingBundle-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -451,6 +598,15 @@
 			buildConfigurations = (
 				A116369C22C520AF0020072C /* Debug */,
 				A116369D22C520AF0020072C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A1D887B422DCC874007C73ED /* Build configuration list for PBXNativeTarget "UIKitForMacPlaygroundSupportingBundle" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A1D887B522DCC874007C73ED /* Debug */,
+				A1D887B622DCC874007C73ED /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

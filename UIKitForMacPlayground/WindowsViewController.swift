@@ -9,6 +9,10 @@
 import Foundation
 import UIKit
 
+extension Notification.Name {
+
+}
+
 class WindowsViewController: ExamplesViewController {
     override func viewDidLoad() {
         self.views = [
@@ -25,6 +29,10 @@ class WindowsViewController: ExamplesViewController {
             .button(text: "Launch a new single-color window", color: .systemBlue, didTap: { _ in
                 let activity = NSUserActivity(activityType: UserActivities.square.rawValue)
                 UIApplication.shared.requestSceneSessionActivation(nil, userActivity: activity, options: nil, errorHandler: nil)
+            }),
+            .header(text: "Window management"),
+            .button(text: "Move this window 50pt to the right", color: .systemBlue, didTap: { _ in
+                NotificationCenter.default.post(name: Notification.Name(rawValue: "appkitbridge"), object: nil)
             })
         ]
 

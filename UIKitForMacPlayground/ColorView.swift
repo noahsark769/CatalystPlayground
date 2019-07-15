@@ -6,7 +6,6 @@
 //  Copyright © 2019 Noah Gilmore. All rights reserved.
 //
 
-import Foundation
 import UIKit
 
 class ColorView: UIView {
