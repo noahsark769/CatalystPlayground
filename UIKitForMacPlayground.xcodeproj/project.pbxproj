@@ -27,6 +27,9 @@
 		A1D887AC22DCB27F007C73ED /* DropExampleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1D887AB22DCB27F007C73ED /* DropExampleView.swift */; };
 		A1D887B922DCC9F3007C73ED /* AppKitPrincipal.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1D887B822DCC9F3007C73ED /* AppKitPrincipal.swift */; };
 		A1D887BA22DCCA42007C73ED /* UIKitForMacPlaygroundSupportingBundle.bundle in Embed PlugIns */ = {isa = PBXBuildFile; fileRef = A1D887B122DCC874007C73ED /* UIKitForMacPlaygroundSupportingBundle.bundle */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		A1D887C022DD2ECD007C73ED /* AppKitBridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1D887BF22DD2ECD007C73ED /* AppKitBridge.swift */; };
+		A1D887C122DD2EEA007C73ED /* AppKitBridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1D887BF22DD2ECD007C73ED /* AppKitBridge.swift */; };
+		A1D887C522DD308C007C73ED /* AppKitBundleLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = A1D887C422DD308C007C73ED /* AppKitBundleLoader.m */; };
 		B96C579B73CBD88DAF015B1D /* Pods_UIKitForMacPlayground.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 67B3C60BFC993E73C93CC8E0 /* Pods_UIKitForMacPlayground.framework */; };
 /* End PBXBuildFile section */
 
@@ -82,6 +85,10 @@
 		A1D887B322DCC874007C73ED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A1D887B722DCC9F3007C73ED /* UIKitForMacPlaygroundSupportingBundle-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIKitForMacPlaygroundSupportingBundle-Bridging-Header.h"; sourceTree = "<group>"; };
 		A1D887B822DCC9F3007C73ED /* AppKitPrincipal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppKitPrincipal.swift; sourceTree = "<group>"; };
+		A1D887BF22DD2ECD007C73ED /* AppKitBridge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppKitBridge.swift; sourceTree = "<group>"; };
+		A1D887C222DD308C007C73ED /* UIKitForMacPlayground-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIKitForMacPlayground-Bridging-Header.h"; sourceTree = "<group>"; };
+		A1D887C322DD308C007C73ED /* AppKitBundleLoader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppKitBundleLoader.h; sourceTree = "<group>"; };
+		A1D887C422DD308C007C73ED /* AppKitBundleLoader.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppKitBundleLoader.m; sourceTree = "<group>"; };
 		A793676ECB32AE0CCFB9C6EA /* Pods-UIKitForMacPlayground.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UIKitForMacPlayground.debug.xcconfig"; path = "Target Support Files/Pods-UIKitForMacPlayground/Pods-UIKitForMacPlayground.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -164,6 +171,10 @@
 				A1D887A722DCB108007C73ED /* DragAndDropViewController.swift */,
 				A1D887A922DCB167007C73ED /* DragExampleView.swift */,
 				A1D887AB22DCB27F007C73ED /* DropExampleView.swift */,
+				A1D887BF22DD2ECD007C73ED /* AppKitBridge.swift */,
+				A1D887C322DD308C007C73ED /* AppKitBundleLoader.h */,
+				A1D887C422DD308C007C73ED /* AppKitBundleLoader.m */,
+				A1D887C222DD308C007C73ED /* UIKitForMacPlayground-Bridging-Header.h */,
 			);
 			path = UIKitForMacPlayground;
 			sourceTree = "<group>";
@@ -231,6 +242,7 @@
 				TargetAttributes = {
 					A116368622C520AD0020072C = {
 						CreatedOnToolsVersion = 11.0;
+						LastSwiftMigration = 1100;
 					};
 					A1D887B022DCC874007C73ED = {
 						CreatedOnToolsVersion = 11.0;
@@ -331,6 +343,8 @@
 				A116368B22C520AD0020072C /* AppDelegate.swift in Sources */,
 				A1D887A022DCA20B007C73ED /* UserActivities.swift in Sources */,
 				A1A1A69322CB0D97003B81A7 /* ListViewController.swift in Sources */,
+				A1D887C022DD2ECD007C73ED /* AppKitBridge.swift in Sources */,
+				A1D887C522DD308C007C73ED /* AppKitBundleLoader.m in Sources */,
 				A116117322D003B000251B87 /* WindowsViewController.swift in Sources */,
 				A1D8877722DC3D3B007C73ED /* SquareSceneDelegate.swift in Sources */,
 				A1D887A222DCA24E007C73ED /* HoverViewController.swift in Sources */,
@@ -347,6 +361,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A1D887B922DCC9F3007C73ED /* AppKitPrincipal.swift in Sources */,
+				A1D887C122DD2EEA007C73ED /* AppKitBridge.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -491,6 +506,7 @@
 			baseConfigurationReference = A793676ECB32AE0CCFB9C6EA /* Pods-UIKitForMacPlayground.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = UIKitForMacPlayground/UIKitForMacPlayground.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DERIVE_UIKITFORMAC_PRODUCT_BUNDLE_IDENTIFIER = YES;
@@ -503,6 +519,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.noahgilmore.UIKitForMacPlayground;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTS_UIKITFORMAC = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "UIKitForMacPlayground/UIKitForMacPlayground-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -513,6 +531,7 @@
 			baseConfigurationReference = 417486A30CE1D0BCFC3EB3F4 /* Pods-UIKitForMacPlayground.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = UIKitForMacPlayground/UIKitForMacPlayground.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DERIVE_UIKITFORMAC_PRODUCT_BUNDLE_IDENTIFIER = YES;
@@ -525,6 +544,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.noahgilmore.UIKitForMacPlayground;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTS_UIKITFORMAC = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "UIKitForMacPlayground/UIKitForMacPlayground-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

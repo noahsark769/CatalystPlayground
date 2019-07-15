@@ -9,10 +9,6 @@
 import Foundation
 import UIKit
 
-extension Notification.Name {
-
-}
-
 class WindowsViewController: ExamplesViewController {
     override func viewDidLoad() {
         self.views = [
@@ -32,7 +28,7 @@ class WindowsViewController: ExamplesViewController {
             }),
             .header(text: "Window management"),
             .button(text: "Move this window 50pt to the right", color: .systemBlue, didTap: { _ in
-                NotificationCenter.default.post(name: Notification.Name(rawValue: "appkitbridge"), object: nil)
+                AppDelegate.shared.bridge.moveWindowRight()
             })
         ]
 

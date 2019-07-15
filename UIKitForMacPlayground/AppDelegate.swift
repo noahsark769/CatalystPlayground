@@ -10,15 +10,18 @@ import UIKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
+    var bridge: AppKitObjcBridge! = nil
+
+    static var shared: AppDelegate {
+        return UIApplication.shared.delegate as! AppDelegate
+    }
+
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         let pluginPath = Bundle.main.builtInPlugInsPath!.appending("/UIKitForMacPlaygroundSupportingBundle.bundle")
         let bundle = Bundle(path: pluginPath)!
-        bundle.load()
-        guard let principal = bundle.principalClass as? NSObject.Type else {
-            return true
-        }
-        principal.init()
+        let loader = AppKitBundleLoader()
+        bridge = loader.load(bundle)
         return true
     }
 
