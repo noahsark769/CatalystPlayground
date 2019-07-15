@@ -70,6 +70,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             return WindowsViewController()
         case .hover:
             return HoverViewController()
+        case .dragAndDrop:
+            return DragAndDropViewController()
         default:
             return ViewController()
         }

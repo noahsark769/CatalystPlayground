@@ -20,13 +20,14 @@ func generateRandomColor() -> UIColor {
     return UIColor(hue: hue, saturation: saturation, brightness: brightness, alpha: 1)
 }
 
-class ViewController: UIViewController {
+class ViewController: ExamplesViewController {
     override func viewDidLoad() {
+        self.views = [
+            .paragraph(text: "Press Cmd-R to change the color of this view")
+        ]
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         self.view.backgroundColor = generateRandomColor()
-        self.view.widthAnchor.constraint(equalToConstant: 200).isActive = true
-        self.view.heightAnchor.constraint(equalToConstant: 200).isActive = true
     }
 
     override var keyCommands: [UIKeyCommand]? {
@@ -41,26 +42,6 @@ class ViewController: UIViewController {
 
     override var canBecomeFirstResponder: Bool {
         return true
-    }
-
-    override func buildMenu(with builder: UIMenuBuilder) {
-        print("Building a ye olde menu")
-    }
-
-    override func buildCommands(with builder: UICommandBuilder) {
-        builder.insertChild(UICommandGroup(
-            __title: "TEST GROUP 2",
-            discoverabilityTitle: "Group 2",
-            identifier: UIMenu.Identifier("hey2"),
-            options: [],
-            children: [
-                UIKeyCommand(
-                    input: "R",
-                    modifierFlags: [.command],
-                    action: #selector(ViewController.testSelected(_:))
-                )
-            ]
-        ), atEndOfGroup: .file)
     }
 
     @objc private func testSelected(_ sender: AppDelegate) {

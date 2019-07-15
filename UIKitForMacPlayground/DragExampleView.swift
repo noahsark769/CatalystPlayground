@@ -1,5 +1,5 @@
 //
-//  HoverExampleView.swift
+//  DragExampleView.swift
 //  UIKitForMacPlayground
 //
 //  Created by Noah Gilmore on 7/15/19.
@@ -9,36 +9,25 @@
 import Foundation
 import UIKit
 
-final class HoverColorView: ColorView {
-    let hoverColor: UIColor
-    let originalColor: UIColor
-
-    init(color: UIColor, hoverColor: UIColor) {
-        self.hoverColor = hoverColor
-        self.originalColor = color
-
+final class DragColorView: ColorView {
+    init(color: UIColor) {
         super.init(color: color, dimension: 70)
-        let recognizer = UIHoverGestureRecognizer(target: self, action: #selector(handleHover(_:)))
-        self.addGestureRecognizer(recognizer)
+        let interaction = UIDragInteraction(delegate: self)
+        self.addInteraction(interaction)
     }
 
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+}
 
-    @objc private func handleHover(_ sender: UIHoverGestureRecognizer) {
-        switch sender.state {
-        case .began, .changed:
-            self.color = self.hoverColor
-        case .ended:
-            self.color = self.originalColor
-        default:
-            break
-        }
+extension DragColorView: UIDragInteractionDelegate {
+    func dragInteraction(_ interaction: UIDragInteraction, itemsForBeginning session: UIDragSession) -> [UIDragItem] {
+        return [UIDragItem(itemProvider: NSItemProvider(object: self.color))]
     }
 }
 
-final class HoverExampleView: UIView {
+final class DragExampleView: UIView {
     private let stackView: UIStackView = {
         let view = UIStackView()
         view.axis = .horizontal
@@ -50,17 +39,23 @@ final class HoverExampleView: UIView {
         super.init(frame: .zero)
 
         self.addSubview(stackView)
-
-        for (color, hoverColor) in [(UIColor.red, UIColor.blue), (UIColor.blue, UIColor.green), (UIColor.green, UIColor.red)] {
-            let colorView = HoverColorView(color: color, hoverColor: hoverColor)
+        for color in [UIColor.red, UIColor.blue, UIColor.green] {
+            let colorView = DragColorView(color: color)
             stackView.addArrangedSubview(colorView)
         }
-
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.leadingAnchor.constraint(equalTo: self.leadingAnchor).isActive = true
         stackView.trailingAnchor.constraint(equalTo: self.trailingAnchor).isActive = true
         stackView.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
         stackView.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
+
+//        let view = DragColorView(color: UIColor.purple)
+//        self.addSubview(view)
+//        view.translatesAutoresizingMaskIntoConstraints = false
+//        view.leadingAnchor.constraint(equalTo: self.leadingAnchor).isActive = true
+//        view.trailingAnchor.constraint(equalTo: self.trailingAnchor).isActive = true
+//        view.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
+//        view.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
     }
 
     required init?(coder aDecoder: NSCoder) {

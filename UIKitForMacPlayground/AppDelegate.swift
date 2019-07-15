@@ -42,22 +42,30 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
     }
 
-    override func buildCommands(with builder: UICommandBuilder) {
+    override func buildMenu(with builder: UIMenuBuilder) {
+        super.buildMenu(with: builder)
+
         let command = UIKeyCommand(
             input: "J",
             modifierFlags: [.command],
             action: #selector(self.jumpSelected(_:))
         )
         command.title = "Jump to Windows"
-        builder.insertChild(UICommandGroup(
+
+        let noShortcutCommand = UICommand(
+            __title: "No shortcut",
+            image: nil,
+            action: #selector(self.noShortcutSelected),
+            propertyList: nil
+        )
+
+        builder.insertChild(UIMenu(
             __title: "Jump",
-            discoverabilityTitle: "Group",
-            identifier: UIMenu.Identifier("hey"),
+            image: nil,
+            identifier: UIMenu.Identifier(rawValue: "com.noahgilmore.uikitformacplaygroud.jump"),
             options: [],
-            children: [
-                command
-            ]
-        ), atEndOfGroup: .view)
+            children: [command, noShortcutCommand]
+        ), atEndOfMenu: .view)
     }
 
     @objc private func jumpSelected(_ sender: AppDelegate) {
@@ -67,6 +75,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             .first?.delegate else { return }
         guard let sceneDelegate = delegate as? SceneDelegate else { return }
         sceneDelegate.handleDetailType(.windows)
+    }
+
+    @objc private func noShortcutSelected(_ sender: AppDelegate) {
+        guard let delegate = UIApplication.shared.connectedScenes.compactMap({
+            ($0 as? UIWindowScene)
+        }).filter({ $0.activationState == .foregroundActive })
+            .first?.delegate else { return }
+        guard let sceneDelegate = delegate as? SceneDelegate else { return }
+        sceneDelegate.handleDetailType(.keyboardShortcuts)
     }
 }
 

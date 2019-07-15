@@ -13,6 +13,7 @@ enum DetailType: String, CaseIterable {
     case keyboardShortcuts = "Keyboard Shortcuts"
     case windows = "Windows"
     case hover = "Hover"
+    case dragAndDrop = "Drag and drop"
 }
 
 struct CellViewModel: TableCellViewModel {
