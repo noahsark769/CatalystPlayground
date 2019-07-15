@@ -25,6 +25,8 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         self.view.backgroundColor = generateRandomColor()
+        self.view.widthAnchor.constraint(equalToConstant: 200).isActive = true
+        self.view.heightAnchor.constraint(equalToConstant: 200).isActive = true
     }
 
     override var keyCommands: [UIKeyCommand]? {

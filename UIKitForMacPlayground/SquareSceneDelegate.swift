@@ -1,26 +1,15 @@
 //
-//  SceneDelegate.swift
+//  SquareSceneDelegate.swift
 //  UIKitForMacPlayground
 //
-//  Created by Noah Gilmore on 6/27/19.
+//  Created by Noah Gilmore on 7/14/19.
 //  Copyright © 2019 Noah Gilmore. All rights reserved.
 //
 
+import Foundation
 import UIKit
-#if targetEnvironment(UIKitForMac)
-import AppKit
-#endif
-import CoreImage
 
-// Hacky stuff as per https://stackoverflow.com/questions/27243158/hiding-the-master-view-controller-with-uisplitviewcontroller-in-ios8
-extension UISplitViewController {
-    func toggleMasterView() {
-        let barButtonItem = self.displayModeButtonItem
-        UIApplication.shared.sendAction(barButtonItem.action!, to: barButtonItem.target, from: nil, for: nil)
-    }
-}
-
-class SceneDelegate: UIResponder, UIWindowSceneDelegate {
+class SquareSceneDelegate: UIResponder, UIWindowSceneDelegate {
     var window: UIWindow?
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
@@ -29,31 +18,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         guard let scene = (scene as? UIWindowScene) else { return }
 
-        let splitViewController = UISplitViewController()
-        let listViewController = ListViewController(didSelectDetailType: { type in
-            let viewController = self.viewController(forDetailType: type)
-            viewController.navigationItem.leftBarButtonItem = splitViewController.displayModeButtonItem
-            viewController.navigationItem.leftItemsSupplementBackButton = true
-            viewController.navigationItem.largeTitleDisplayMode = .never
-            let detailNavController = UINavigationController(rootViewController: viewController)
-            splitViewController.showDetailViewController(detailNavController, sender: self)
-            if viewController.canBecomeFirstResponder {
-                viewController.becomeFirstResponder()
-            }
-        })
-        let navController = UINavigationController(rootViewController: listViewController)
-        navController.navigationBar.prefersLargeTitles = true
-        let viewController = ViewController()
-        viewController.navigationItem.leftBarButtonItem = splitViewController.displayModeButtonItem
-        viewController.navigationItem.leftItemsSupplementBackButton = true
-        viewController.navigationItem.largeTitleDisplayMode = .never
-        let detailNavController = UINavigationController(rootViewController: viewController)
-        splitViewController.viewControllers = [navController, detailNavController]
-        splitViewController.delegate = self
-        splitViewController.primaryBackgroundStyle = .sidebar
-
         window = UIWindow(windowScene: scene)
-        window?.rootViewController = splitViewController
+        window?.rootViewController = ViewController()
         window?.makeKeyAndVisible()
     }
 
@@ -102,11 +68,5 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     func windowScene(_ windowScene: UIWindowScene, didUpdate previousCoordinateSpace: UICoordinateSpace, interfaceOrientation previousInterfaceOrientation: UIInterfaceOrientation, traitCollection previousTraitCollection: UITraitCollection) {
         print("Old: \(previousCoordinateSpace), new: \(windowScene.coordinateSpace)")
-    }
-}
-
-extension SceneDelegate: UISplitViewControllerDelegate {
-    func splitViewController(_ splitViewController: UISplitViewController, collapseSecondary secondaryViewController: UIViewController, onto primaryViewController: UIViewController) -> Bool {
-        return true
     }
 }

@@ -7,18 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A116117322D003B000251B87 /* WindowsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A116117222D003B000251B87 /* WindowsViewController.swift */; };
 		A116368B22C520AD0020072C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A116368A22C520AD0020072C /* AppDelegate.swift */; };
 		A116368D22C520AD0020072C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A116368C22C520AD0020072C /* SceneDelegate.swift */; };
 		A116368F22C520AD0020072C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A116368E22C520AD0020072C /* ViewController.swift */; };
 		A116369422C520AF0020072C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A116369322C520AF0020072C /* Assets.xcassets */; };
 		A116369722C520AF0020072C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A116369522C520AF0020072C /* LaunchScreen.storyboard */; };
 		A1A1A69322CB0D97003B81A7 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A1A69222CB0D97003B81A7 /* ListViewController.swift */; };
+		A1D8877722DC3D3B007C73ED /* SquareSceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1D8877622DC3D3B007C73ED /* SquareSceneDelegate.swift */; };
 		B96C579B73CBD88DAF015B1D /* Pods_UIKitForMacPlayground.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 67B3C60BFC993E73C93CC8E0 /* Pods_UIKitForMacPlayground.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		417486A30CE1D0BCFC3EB3F4 /* Pods-UIKitForMacPlayground.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UIKitForMacPlayground.release.xcconfig"; path = "Target Support Files/Pods-UIKitForMacPlayground/Pods-UIKitForMacPlayground.release.xcconfig"; sourceTree = "<group>"; };
 		67B3C60BFC993E73C93CC8E0 /* Pods_UIKitForMacPlayground.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UIKitForMacPlayground.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A116117222D003B000251B87 /* WindowsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowsViewController.swift; sourceTree = "<group>"; };
 		A116368722C520AD0020072C /* UIKitForMacPlayground.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UIKitForMacPlayground.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A116368A22C520AD0020072C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A116368C22C520AD0020072C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -28,6 +31,7 @@
 		A116369822C520AF0020072C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A116369E22C520E00020072C /* UIKitForMacPlayground.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = UIKitForMacPlayground.entitlements; sourceTree = "<group>"; };
 		A1A1A69222CB0D97003B81A7 /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
+		A1D8877622DC3D3B007C73ED /* SquareSceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SquareSceneDelegate.swift; sourceTree = "<group>"; };
 		A793676ECB32AE0CCFB9C6EA /* Pods-UIKitForMacPlayground.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UIKitForMacPlayground.debug.xcconfig"; path = "Target Support Files/Pods-UIKitForMacPlayground/Pods-UIKitForMacPlayground.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -89,6 +93,8 @@
 				A116369522C520AF0020072C /* LaunchScreen.storyboard */,
 				A116369822C520AF0020072C /* Info.plist */,
 				A1A1A69222CB0D97003B81A7 /* ListViewController.swift */,
+				A116117222D003B000251B87 /* WindowsViewController.swift */,
+				A1D8877622DC3D3B007C73ED /* SquareSceneDelegate.swift */,
 			);
 			path = UIKitForMacPlayground;
 			sourceTree = "<group>";
@@ -210,6 +216,8 @@
 				A116368F22C520AD0020072C /* ViewController.swift in Sources */,
 				A116368B22C520AD0020072C /* AppDelegate.swift in Sources */,
 				A1A1A69322CB0D97003B81A7 /* ListViewController.swift in Sources */,
+				A116117322D003B000251B87 /* WindowsViewController.swift in Sources */,
+				A1D8877722DC3D3B007C73ED /* SquareSceneDelegate.swift in Sources */,
 				A116368D22C520AD0020072C /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
