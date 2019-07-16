@@ -55,6 +55,16 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window = UIWindow(windowScene: scene)
         window?.rootViewController = splitViewController
         window?.makeKeyAndVisible()
+
+        #if targetEnvironment(UIKitForMac)
+            if let titlebar = scene.titlebar {
+                let toolbar = NSToolbar(identifier: "toolbar")
+                toolbar.delegate = self
+
+                titlebar.toolbar = toolbar
+                titlebar.titleVisibility = .hidden
+            }
+        #endif
     }
 
     func handleDetailType(_ detailType: DetailType) {
@@ -74,6 +84,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             return DragAndDropViewController()
         case .touchBar:
             return TouchBarViewController()
+        case .contextMenus:
+            return ContextMenuViewController()
         default:
             return ViewController()
         }
@@ -115,5 +127,36 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 extension SceneDelegate: UISplitViewControllerDelegate {
     func splitViewController(_ splitViewController: UISplitViewController, collapseSecondary secondaryViewController: UIViewController, onto primaryViewController: UIViewController) -> Bool {
         return true
+    }
+}
+
+extension SceneDelegate: NSToolbarDelegate {
+    func toolbarDefaultItemIdentifiers(_ toolbar: NSToolbar) -> [NSToolbarItem.Identifier] {
+        return [NSToolbarItem.Identifier(rawValue: "test"), .flexibleSpace, NSToolbarItem.Identifier(rawValue: "other")]
+    }
+
+    func toolbarAllowedItemIdentifiers(_ toolbar: NSToolbar) -> [NSToolbarItem.Identifier] {
+        return [NSToolbarItem.Identifier(rawValue: "test"), .flexibleSpace, NSToolbarItem.Identifier(rawValue: "other")]
+    }
+
+    func toolbar(_ toolbar: NSToolbar, itemForItemIdentifier itemIdentifier: NSToolbarItem.Identifier, willBeInsertedIntoToolbar flag: Bool) -> NSToolbarItem? {
+        switch itemIdentifier.rawValue {
+        case "test":
+            let item = NSToolbarItem(itemIdentifier: itemIdentifier, barButtonItem: UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(didTapAddButton)))
+            item.title = "New window"
+            return item
+        case "other":
+            return AppDelegate.shared.bridge!.customToolbarItem()
+        default:
+            return nil
+        }
+    }
+
+    @objc private func didTapAddButton(_ sender: NSToolbarItem) {
+        UIApplication.shared.requestSceneSessionActivation(nil, userActivity: nil, options: nil, errorHandler: nil)
+    }
+
+    @objc private func didTapOtherButton(_ sender: NSToolbarItem) {
+        UIApplication.shared.requestSceneSessionActivation(nil, userActivity: nil, options: nil, errorHandler: nil)
     }
 }

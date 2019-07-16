@@ -15,6 +15,7 @@ enum DetailType: String, CaseIterable {
     case hover = "Hover"
     case dragAndDrop = "Drag and drop"
     case touchBar = "Touch bar"
+    case contextMenus = "Context menus"
 }
 
 struct CellViewModel: TableCellViewModel {

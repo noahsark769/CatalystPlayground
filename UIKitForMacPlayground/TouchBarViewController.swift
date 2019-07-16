@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import AppKit
 
 final class TouchBarViewController: ExamplesViewController {
     let colorView = ColorView(color: .red, dimension: 100)

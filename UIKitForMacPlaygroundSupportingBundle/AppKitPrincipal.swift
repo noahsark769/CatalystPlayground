@@ -16,4 +16,23 @@ class AppKitPrincipal: NSObject, AppKitObjcBridge {
         let newFrame = currentFrame.offsetBy(dx: 50, dy: 0)
         firstWindow.setFrame(newFrame, display: false, animate: true)
     }
+
+    func customToolbarItem() -> NSToolbarItem {
+        let item = NSToolbarItem(itemIdentifier: NSToolbarItem.Identifier(rawValue: "other"))
+        item.title = "OTHER"
+        let button = NSPopUpButton()
+        button.addItem(withTitle: "This NSPopupButton comes from AppKit")
+        button.addItem(withTitle: "The choices don't do anything")
+        button.addItem(withTitle: "But it serves as a nice demonstration")
+        item.view = button
+        return item
+    }
+}
+
+class RedView: NSView {
+    override func draw(_ dirtyRect: NSRect) {
+        super.draw(dirtyRect)
+        NSColor.systemRed.setFill()
+        dirtyRect.fill()
+    }
 }

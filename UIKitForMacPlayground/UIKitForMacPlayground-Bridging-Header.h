@@ -3,3 +3,4 @@
 //
 
 #import "AppKitBundleLoader.h"
+#import <UIKit/NSToolbar+UIKitAdditions.h>

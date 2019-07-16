@@ -7,14 +7,16 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <AppKit/AppKit.h>
+
+NS_ASSUME_NONNULL_BEGIN
 
 @protocol AppKitObjcBridge <NSObject>
 
 - (void)moveWindowRight;
+- (NSToolbarItem *)customToolbarItem;
 
 @end
-
-NS_ASSUME_NONNULL_BEGIN
 
 @interface AppKitBundleLoader : NSObject
 
