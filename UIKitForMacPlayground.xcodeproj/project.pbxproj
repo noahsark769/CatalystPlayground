@@ -30,6 +30,7 @@
 		A1D887C022DD2ECD007C73ED /* AppKitBridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1D887BF22DD2ECD007C73ED /* AppKitBridge.swift */; };
 		A1D887C122DD2EEA007C73ED /* AppKitBridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1D887BF22DD2ECD007C73ED /* AppKitBridge.swift */; };
 		A1D887C522DD308C007C73ED /* AppKitBundleLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = A1D887C422DD308C007C73ED /* AppKitBundleLoader.m */; };
+		A1D887C722DE06EF007C73ED /* TouchBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1D887C622DE06EF007C73ED /* TouchBarViewController.swift */; };
 		B96C579B73CBD88DAF015B1D /* Pods_UIKitForMacPlayground.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 67B3C60BFC993E73C93CC8E0 /* Pods_UIKitForMacPlayground.framework */; };
 /* End PBXBuildFile section */
 
@@ -89,6 +90,7 @@
 		A1D887C222DD308C007C73ED /* UIKitForMacPlayground-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIKitForMacPlayground-Bridging-Header.h"; sourceTree = "<group>"; };
 		A1D887C322DD308C007C73ED /* AppKitBundleLoader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppKitBundleLoader.h; sourceTree = "<group>"; };
 		A1D887C422DD308C007C73ED /* AppKitBundleLoader.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppKitBundleLoader.m; sourceTree = "<group>"; };
+		A1D887C622DE06EF007C73ED /* TouchBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TouchBarViewController.swift; sourceTree = "<group>"; };
 		A793676ECB32AE0CCFB9C6EA /* Pods-UIKitForMacPlayground.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UIKitForMacPlayground.debug.xcconfig"; path = "Target Support Files/Pods-UIKitForMacPlayground/Pods-UIKitForMacPlayground.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -175,6 +177,7 @@
 				A1D887C322DD308C007C73ED /* AppKitBundleLoader.h */,
 				A1D887C422DD308C007C73ED /* AppKitBundleLoader.m */,
 				A1D887C222DD308C007C73ED /* UIKitForMacPlayground-Bridging-Header.h */,
+				A1D887C622DE06EF007C73ED /* TouchBarViewController.swift */,
 			);
 			path = UIKitForMacPlayground;
 			sourceTree = "<group>";
@@ -338,6 +341,7 @@
 				A1D887A422DCA275007C73ED /* HoverExampleView.swift in Sources */,
 				A1D887A822DCB108007C73ED /* DragAndDropViewController.swift in Sources */,
 				A116368F22C520AD0020072C /* ViewController.swift in Sources */,
+				A1D887C722DE06EF007C73ED /* TouchBarViewController.swift in Sources */,
 				A1D8879E22DCA1F6007C73ED /* HeaderView.swift in Sources */,
 				A1D887A622DCA299007C73ED /* ColorView.swift in Sources */,
 				A116368B22C520AD0020072C /* AppDelegate.swift in Sources */,
