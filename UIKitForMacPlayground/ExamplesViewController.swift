@@ -76,4 +76,8 @@ class ExamplesViewController: UIViewController {
         }
         handler(self)
     }
+
+    override var canBecomeFirstResponder: Bool {
+        return true
+    }
 }

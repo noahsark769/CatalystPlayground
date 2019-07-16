@@ -10,6 +10,8 @@ import Foundation
 import AppKit
 
 class AppKitPrincipal: NSObject, AppKitObjcBridge {
+    private var bridge: UIKitBridge! = nil
+
     func moveWindowRight() {
         let firstWindow = NSApplication.shared.windows.first!
         let currentFrame = firstWindow.frame
@@ -17,15 +19,53 @@ class AppKitPrincipal: NSObject, AppKitObjcBridge {
         firstWindow.setFrame(newFrame, display: false, animate: true)
     }
 
-    func customToolbarItem() -> NSToolbarItem {
-        let item = NSToolbarItem(itemIdentifier: NSToolbarItem.Identifier(rawValue: "other"))
-        item.title = "OTHER"
-        let button = NSPopUpButton()
-        button.addItem(withTitle: "This NSPopupButton comes from AppKit")
-        button.addItem(withTitle: "The choices don't do anything")
-        button.addItem(withTitle: "But it serves as a nice demonstration")
-        item.view = button
+    func customToolbarItem(callback: @escaping (String) -> Void) -> NSToolbarItem {
+        let item = DetailTypeToolbarItem(itemIdentifier: NSToolbarItem.Identifier(rawValue: "other"), handler: callback)
         return item
+    }
+
+    func setUIKit(_ bridge: UIKitBridge) {
+        self.bridge = bridge
+    }
+
+    @objc private func didSelectFromPopup(_ sender: NSPopUpButton) {
+        self.bridge.didSelectDetailType(sender.titleOfSelectedItem ?? "")
+    }
+}
+
+class DetailTypeToolbarItem: NSToolbarItem, DetailToolbarItemInterface {
+    private let handler: (String) -> Void
+
+    init(itemIdentifier: NSToolbarItem.Identifier, handler: @escaping (String) -> Void) {
+        self.handler = handler
+        super.init(itemIdentifier: itemIdentifier)
+        let button = NSPopUpButton()
+        for type in DetailType.allCases {
+            button.addItem(withTitle: type.rawValue)
+        }
+        button.target = self
+        button.action = #selector(didSelectFromPopup)
+        self.view = button
+
+        NotificationCenter.default.addObserver(forName: Notification.Name.didChangeDetailType, object: nil, queue: nil, using: { notification in
+            guard let detailTypeString = notification.userInfo?["detailType"] as? String else {
+                return
+            }
+            guard let detailType = DetailType(rawValue: detailTypeString) else { return }
+            self.setSelected(detailType)
+        })
+    }
+
+    func setSelected(_ detailType: DetailType) {
+        guard let button = self.view as? NSPopUpButton else {
+            return
+        }
+        button.selectItem(withTitle: detailType.rawValue)
+    }
+
+    @objc private func didSelectFromPopup(_ sender: NSPopUpButton) {
+        guard let selectedTitle = sender.titleOfSelectedItem else { return }
+        self.handler(selectedTitle)
     }
 }
 

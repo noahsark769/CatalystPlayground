@@ -9,15 +9,6 @@
 import Foundation
 import ReactiveLists
 
-enum DetailType: String, CaseIterable {
-    case keyboardShortcuts = "Keyboard Shortcuts"
-    case windows = "Windows"
-    case hover = "Hover"
-    case dragAndDrop = "Drag and drop"
-    case touchBar = "Touch bar"
-    case contextMenus = "Context menus"
-}
-
 struct CellViewModel: TableCellViewModel {
     var accessibilityFormat: CellAccessibilityFormat {
         return CellAccessibilityFormat(self.title)

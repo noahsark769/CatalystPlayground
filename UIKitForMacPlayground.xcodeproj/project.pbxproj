@@ -30,6 +30,8 @@
 		A1D887C522DD308C007C73ED /* AppKitBundleLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = A1D887C422DD308C007C73ED /* AppKitBundleLoader.m */; };
 		A1D887C722DE06EF007C73ED /* TouchBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1D887C622DE06EF007C73ED /* TouchBarViewController.swift */; };
 		A1D887C922DE0D78007C73ED /* ContextMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1D887C822DE0D78007C73ED /* ContextMenuViewController.swift */; };
+		A1D887CB22DE3670007C73ED /* DetailType.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1D887CA22DE3670007C73ED /* DetailType.swift */; };
+		A1D887CC22DE367E007C73ED /* DetailType.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1D887CA22DE3670007C73ED /* DetailType.swift */; };
 		B96C579B73CBD88DAF015B1D /* Pods_UIKitForMacPlayground.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 67B3C60BFC993E73C93CC8E0 /* Pods_UIKitForMacPlayground.framework */; };
 /* End PBXBuildFile section */
 
@@ -90,6 +92,7 @@
 		A1D887C422DD308C007C73ED /* AppKitBundleLoader.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppKitBundleLoader.m; sourceTree = "<group>"; };
 		A1D887C622DE06EF007C73ED /* TouchBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TouchBarViewController.swift; sourceTree = "<group>"; };
 		A1D887C822DE0D78007C73ED /* ContextMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContextMenuViewController.swift; sourceTree = "<group>"; };
+		A1D887CA22DE3670007C73ED /* DetailType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailType.swift; sourceTree = "<group>"; };
 		A793676ECB32AE0CCFB9C6EA /* Pods-UIKitForMacPlayground.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UIKitForMacPlayground.debug.xcconfig"; path = "Target Support Files/Pods-UIKitForMacPlayground/Pods-UIKitForMacPlayground.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -177,6 +180,7 @@
 				A1D887C222DD308C007C73ED /* UIKitForMacPlayground-Bridging-Header.h */,
 				A1D887C622DE06EF007C73ED /* TouchBarViewController.swift */,
 				A1D887C822DE0D78007C73ED /* ContextMenuViewController.swift */,
+				A1D887CA22DE3670007C73ED /* DetailType.swift */,
 			);
 			path = UIKitForMacPlayground;
 			sourceTree = "<group>";
@@ -353,6 +357,7 @@
 				A1D8879C22DCA1AA007C73ED /* ExamplesViewController.swift in Sources */,
 				A1D887C922DE0D78007C73ED /* ContextMenuViewController.swift in Sources */,
 				A1D887AC22DCB27F007C73ED /* DropExampleView.swift in Sources */,
+				A1D887CB22DE3670007C73ED /* DetailType.swift in Sources */,
 				A1D887AA22DCB167007C73ED /* DragExampleView.swift in Sources */,
 				A1D8879A22DCA178007C73ED /* HashableIdGenerator.swift in Sources */,
 				A116368D22C520AD0020072C /* SceneDelegate.swift in Sources */,
@@ -363,6 +368,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A1D887CC22DE367E007C73ED /* DetailType.swift in Sources */,
 				A1D887B922DCC9F3007C73ED /* AppKitPrincipal.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

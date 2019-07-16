@@ -22,6 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let bundle = Bundle(path: pluginPath)!
         let loader = AppKitBundleLoader()
         bridge = loader.load(bundle)
+        bridge?.setUIKit(self)
         return true
     }
 
@@ -94,6 +95,46 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             .first?.delegate else { return }
         guard let sceneDelegate = delegate as? SceneDelegate else { return }
         sceneDelegate.handleDetailType(.keyboardShortcuts)
+    }
+}
+
+extension AppDelegate: UIKitBridge {
+    func didSelectDetailType(_ detailTypeString: String) {
+        guard let detailType = DetailType(rawValue: detailTypeString) else { return }
+        print(detailType)
+        guard let scene = UIResponder.currentWindowScene() else { return }
+        print(scene)
+        guard let delegate = scene.delegate as? SceneDelegate else { return }
+        print(delegate)
+        delegate.handleDetailType(detailType)
+    }
+}
+
+private weak var currentFirstResponder: UIResponder?
+extension UIResponder {
+    var containingScene: UIWindowScene? {
+        var currentResponder: UIResponder = self
+        while let responder = currentResponder.next {
+            if let windowScene = responder as? UIWindowScene {
+                return windowScene
+            }
+            currentResponder = responder
+        }
+        return nil
+    }
+
+    @objc func findFirstResponder(sender: AnyObject) {
+        currentFirstResponder = self
+    }
+
+    static func firstResponder() -> UIResponder? {
+        currentFirstResponder = nil
+        UIApplication.shared.sendAction(#selector(findFirstResponder(sender:)), to: nil, from: nil, for: nil)
+        return currentFirstResponder
+    }
+
+    static func currentWindowScene() -> UIWindowScene? {
+        return firstResponder()?.containingScene
     }
 }
 

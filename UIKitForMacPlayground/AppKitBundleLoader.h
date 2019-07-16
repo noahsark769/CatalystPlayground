@@ -9,12 +9,15 @@
 #import <Foundation/Foundation.h>
 #import <AppKit/AppKit.h>
 
+@protocol UIKitBridge;
+
 NS_ASSUME_NONNULL_BEGIN
 
 @protocol AppKitObjcBridge <NSObject>
 
 - (void)moveWindowRight;
-- (NSToolbarItem *)customToolbarItem;
+- (NSToolbarItem *)customToolbarItemWithCallback:(void (^)(NSString *))callback;
+- (void)setUIKitBridge:(id<UIKitBridge>)bridge;
 
 @end
 
