@@ -40,7 +40,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             if viewController.canBecomeFirstResponder {
                 viewController.becomeFirstResponder()
             }
-            NotificationCenter.default.post(name: .didChangeDetailType, object: nil, userInfo: ["detailType": type.rawValue])
+            guard let identifier = self.window?.windowScene?.session.persistentIdentifier else { return }
+            NotificationCenter.default.post(name: .didChangeDetailType, object: nil, userInfo: ["detailType": type.rawValue, "identifier": identifier])
         })
         let navController = UINavigationController(rootViewController: listViewController)
         navController.navigationBar.prefersLargeTitles = true
@@ -145,13 +146,14 @@ extension SceneDelegate: NSToolbarDelegate {
     }
 
     func toolbar(_ toolbar: NSToolbar, itemForItemIdentifier itemIdentifier: NSToolbarItem.Identifier, willBeInsertedIntoToolbar flag: Bool) -> NSToolbarItem? {
+        guard let identifier = self.window?.windowScene?.session.persistentIdentifier else { return nil }
         switch itemIdentifier.rawValue {
         case "test":
             let item = NSToolbarItem(itemIdentifier: itemIdentifier, barButtonItem: UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(didTapAddButton)))
             item.title = "New window"
             return item
         case "other":
-            let item = AppDelegate.shared.bridge!.customToolbarItem() { string in
+            let item = AppDelegate.shared.bridge!.customToolbarItem(identifier: identifier) { string in
                 guard let detailType = DetailType(rawValue: string) else { return }
                 self.handleDetailType(detailType)
             }

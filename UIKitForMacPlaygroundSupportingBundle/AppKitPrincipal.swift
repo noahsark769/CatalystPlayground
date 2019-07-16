@@ -19,8 +19,8 @@ class AppKitPrincipal: NSObject, AppKitObjcBridge {
         firstWindow.setFrame(newFrame, display: false, animate: true)
     }
 
-    func customToolbarItem(callback: @escaping (String) -> Void) -> NSToolbarItem {
-        let item = DetailTypeToolbarItem(itemIdentifier: NSToolbarItem.Identifier(rawValue: "other"), handler: callback)
+    func customToolbarItem(identifier: String, callback: @escaping (String) -> Void) -> NSToolbarItem {
+        let item = DetailTypeToolbarItem(itemIdentifier: NSToolbarItem.Identifier(rawValue: identifier), handler: callback)
         return item
     }
 
@@ -33,7 +33,7 @@ class AppKitPrincipal: NSObject, AppKitObjcBridge {
     }
 }
 
-class DetailTypeToolbarItem: NSToolbarItem, DetailToolbarItemInterface {
+class DetailTypeToolbarItem: NSToolbarItem {
     private let handler: (String) -> Void
 
     init(itemIdentifier: NSToolbarItem.Identifier, handler: @escaping (String) -> Void) {
@@ -51,6 +51,10 @@ class DetailTypeToolbarItem: NSToolbarItem, DetailToolbarItemInterface {
             guard let detailTypeString = notification.userInfo?["detailType"] as? String else {
                 return
             }
+            guard let identifier = notification.userInfo?["identifier"] as? String else {
+                return
+            }
+            guard identifier == self.itemIdentifier.rawValue else { return }
             guard let detailType = DetailType(rawValue: detailTypeString) else { return }
             self.setSelected(detailType)
         })

@@ -16,7 +16,7 @@ NS_ASSUME_NONNULL_BEGIN
 @protocol AppKitObjcBridge <NSObject>
 
 - (void)moveWindowRight;
-- (NSToolbarItem *)customToolbarItemWithCallback:(void (^)(NSString *))callback;
+- (NSToolbarItem *)customToolbarItemWithIdentifier:(NSString *)identifier callback:(void (^)(NSString *))callback NS_SWIFT_NAME(customToolbarItem(identifier:callback:));
 - (void)setUIKitBridge:(id<UIKitBridge>)bridge;
 
 @end

@@ -21,10 +21,6 @@ enum DetailType: String, CaseIterable {
     func didSelectDetailType(_ detailTypeString: String)
 }
 
-protocol DetailToolbarItemInterface {
-    func setSelected(_ detailType: DetailType)
-}
-
 extension Notification.Name {
     static let didChangeDetailType = Notification.Name("didChangeDetailType")
 }
