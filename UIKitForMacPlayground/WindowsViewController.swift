@@ -18,19 +18,30 @@ class WindowsViewController: ExamplesViewController {
                 UIApplication.shared.requestSceneSessionActivation(nil, userActivity: nil, options: nil, errorHandler: nil)
             }),
             .button(text: "Close current window (Cmd-W equivalent)", color: .systemRed, didTap: { _ in
-                guard let containingScene = self.view.window?.windowScene else { return }
-                UIApplication.shared.requestSceneSessionDestruction(containingScene.session, options: nil, errorHandler: nil)
+                guard let containingScene = self.view.window?.windowScene else {
+                    return
+                }
+                UIApplication.shared.requestSceneSessionDestruction(
+                    containingScene.session,
+                    options: nil,
+                    errorHandler: nil
+                )
             }),
             .header(text: "Different window types"),
             .button(text: "Launch a new single-color window", color: .systemBlue, didTap: { _ in
                 let activity = NSUserActivity(activityType: UserActivities.square.rawValue)
                 UIApplication.shared.requestSceneSessionActivation(nil, userActivity: activity, options: nil, errorHandler: nil)
-            }),
-            .header(text: "Window management"),
-            .button(text: "Move this window 50pt to the right", color: .systemBlue, didTap: { _ in
-                AppDelegate.shared.bridge.moveWindowRight()
             })
         ]
+
+        if let bridge = AppDelegate.shared.bridge {
+            self.views.append(contentsOf: [
+                .header(text: "Window management"),
+                .button(text: "Move this window 50pt to the right", color: .systemBlue, didTap: { _ in
+                    bridge.moveWindowRight()
+                })
+            ])
+        }
 
         super.viewDidLoad()
     }

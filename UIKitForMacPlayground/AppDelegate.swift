@@ -10,7 +10,7 @@ import UIKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-    var bridge: AppKitObjcBridge! = nil
+    var bridge: AppKitObjcBridge? = nil
 
     static var shared: AppDelegate {
         return UIApplication.shared.delegate as! AppDelegate
