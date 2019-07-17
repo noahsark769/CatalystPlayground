@@ -19,23 +19,12 @@ class SquareSceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let scene = (scene as? UIWindowScene) else { return }
 
         window = UIWindow(windowScene: scene)
-        window?.rootViewController = ViewController()
-        window?.makeKeyAndVisible()
-    }
-
-    func handleDetailType(_ detailType: DetailType) {
-        guard let splitViewController = window?.rootViewController as? UISplitViewController else { return }
-        guard let navigationController = splitViewController.viewControllers.first as? UINavigationController else { return }
-        guard let listViewController = navigationController.topViewController as? ListViewController else { return }
-        listViewController.didSelectDetailType(detailType)
-    }
-
-    func viewController(forDetailType type: DetailType) -> UIViewController {
-        switch type {
-        case .windows: return WindowsViewController()
-        default:
-            return ViewController()
+        let vc = ViewController()
+        if let vc = vc as? AppKitWindowReportingViewController {
+            vc.identifier = "square"
         }
+        window?.rootViewController = vc
+        window?.makeKeyAndVisible()
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

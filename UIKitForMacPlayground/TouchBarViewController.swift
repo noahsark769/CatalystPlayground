@@ -20,7 +20,7 @@ final class TouchBarViewController: ExamplesViewController {
     }
 }
 
-#if targetEnvironment(UIKitForMac)
+#if targetEnvironment(macCatalyst)
 import AppKit
 
 extension TouchBarViewController: NSTouchBarProvider {

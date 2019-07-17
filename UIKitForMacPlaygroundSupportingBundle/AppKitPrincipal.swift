@@ -11,6 +11,7 @@ import AppKit
 
 class AppKitPrincipal: NSObject, AppKitObjcBridge {
     private var bridge: UIKitBridge! = nil
+    private let windowManager = WindowManager()
 
     func moveWindowRight() {
         let firstWindow = NSApplication.shared.windows.first!
@@ -38,6 +39,10 @@ class AppKitPrincipal: NSObject, AppKitObjcBridge {
 
     func setPointerCursor() {
         NSCursor.pointingHand.set()
+    }
+
+    func sceneBecameActive(identifier: String) {
+        self.windowManager.sceneBecameActive(identifier: identifier)
     }
 }
 
@@ -86,5 +91,29 @@ class RedView: NSView {
         super.draw(dirtyRect)
         NSColor.systemRed.setFill()
         dirtyRect.fill()
+    }
+}
+
+/// TODO: This is a hacky way to track and get references to windows between UIKit and AppKit. There's probably a much better way.
+class WindowManager {
+    private var windows: [Int: NSWindow] = [:]
+
+    func sceneBecameActive(identifier: String) {
+        var newWindows: [Int: NSWindow] = [:]
+        for window in NSApplication.shared.windows {
+            if !windows.keys.contains(window.windowNumber) {
+                print("BECOMING ACTIVE: \(window.windowNumber), \(identifier)")
+                self.handleWindowAppearance(identifier: identifier, window: window)
+            }
+            newWindows[window.windowNumber] = window
+        }
+        windows = newWindows
+    }
+
+    func handleWindowAppearance(identifier: String, window: NSWindow) {
+        if identifier == "square" {
+            window.setContentSize(NSSize(width: 200, height: 200))
+            window.styleMask.remove(.resizable)
+        }
     }
 }

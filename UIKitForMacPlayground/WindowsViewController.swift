@@ -28,7 +28,7 @@ class WindowsViewController: ExamplesViewController {
                 )
             }),
             .header(text: "Different window types"),
-            .button(text: "Launch a new single-color window", color: .systemBlue, didTap: { _ in
+            .button(text: "Launch a new single-color, 200x200, non-resizable window", color: .systemBlue, didTap: { _ in
                 let activity = NSUserActivity(activityType: UserActivities.square.rawValue)
                 UIApplication.shared.requestSceneSessionActivation(nil, userActivity: activity, options: nil, errorHandler: nil)
             })

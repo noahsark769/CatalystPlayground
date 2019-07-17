@@ -30,7 +30,7 @@ extension ContextMenuViewController: UIContextMenuInteractionDelegate {
                 UIAction(__title: "Change to random color", image: UIImage(systemName: "square.and.arrow.up"), identifier: UIAction.Identifier(rawValue: "open"), handler: { action in
                     self.colorView.color = generateRandomColor()
                 }),
-                UIMenu(__title: "Predefined colors", image: nil, identifier: nil, children: [
+                UIMenu(title: "Predefined colors", image: nil, identifier: nil, children: [
                     (string: "Red", color: UIColor.systemRed),
                     (string: "Blue", color: UIColor.systemBlue),
                     (string: "Green", color: UIColor.systemGreen)

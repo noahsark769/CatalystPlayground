@@ -9,8 +9,22 @@
 import Foundation
 import UIKit
 
+class AppKitWindowReportingViewController: UIViewController {
+    var identifier: String? = nil
+
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+
+        if let identifier = self.identifier {
+            if self.view.window?.rootViewController == self {
+                AppDelegate.shared.bridge?.sceneBecameActive(identifier: identifier)
+            }
+        }
+    }
+}
+
 /// Subclasses extend this controller to provide standard components  in a list (ViewType instances)
-class ExamplesViewController: UIViewController {
+class ExamplesViewController: AppKitWindowReportingViewController {
     typealias ButtonHandler = (ExamplesViewController) -> Void
     enum ViewType {
         case header(text: String)

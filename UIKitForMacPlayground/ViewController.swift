@@ -8,7 +8,7 @@
 
 import UIKit
 
-#if targetEnvironment(UIKitForMac)
+#if targetEnvironment(macCatalyst)
 import AppKit
 #endif
 
@@ -49,7 +49,7 @@ class ViewController: ExamplesViewController {
     }
 }
 
-#if targetEnvironment(UIKitForMac)
+#if targetEnvironment(macCatalyst)
 extension ViewController: NSTouchBarProvider {
     var touchBar: NSTouchBar? {
         //        return nil

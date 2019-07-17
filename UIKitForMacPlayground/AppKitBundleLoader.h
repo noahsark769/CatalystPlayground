@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+
 #import <AppKit/AppKit.h>
 
 @protocol UIKitBridge;
@@ -20,6 +21,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)setUIKitBridge:(id<UIKitBridge>)bridge;
 - (void)setPointerCursor;
 - (void)setDefaultCursor;
+- (void)sceneBecameActiveWithIdentifier:(NSString *)string NS_SWIFT_NAME(sceneBecameActive(identifier:));
 
 @end
 

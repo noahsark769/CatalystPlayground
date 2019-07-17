@@ -7,16 +7,22 @@
 //
 
 import UIKit
-#if targetEnvironment(UIKitForMac)
+#if targetEnvironment(macCatalyst)
 import AppKit
 #endif
-import CoreImage
 
 // Hacky stuff as per https://stackoverflow.com/questions/27243158/hiding-the-master-view-controller-with-uisplitviewcontroller-in-ios8
 extension UISplitViewController {
     func toggleMasterView() {
         let barButtonItem = self.displayModeButtonItem
         UIApplication.shared.sendAction(barButtonItem.action!, to: barButtonItem.target, from: nil, for: nil)
+    }
+}
+
+class ReportingSplitViewController: UISplitViewController {
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        AppDelegate.shared.bridge?.sceneBecameActive(identifier: "normal")
     }
 }
 
@@ -29,7 +35,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         guard let scene = (scene as? UIWindowScene) else { return }
 
-        let splitViewController = UISplitViewController()
+        let splitViewController = ReportingSplitViewController()
         let listViewController = ListViewController(didSelectDetailType: { type in
             let viewController = self.viewController(forDetailType: type)
             viewController.navigationItem.leftBarButtonItem = splitViewController.displayModeButtonItem
@@ -58,7 +64,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window?.rootViewController = splitViewController
         window?.makeKeyAndVisible()
 
-        #if targetEnvironment(UIKitForMac)
+        #if targetEnvironment(macCatalyst)
             if let titlebar = scene.titlebar {
                 let toolbar = NSToolbar(identifier: "toolbar")
                 toolbar.delegate = self
@@ -124,7 +130,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     }
 
     func windowScene(_ windowScene: UIWindowScene, didUpdate previousCoordinateSpace: UICoordinateSpace, interfaceOrientation previousInterfaceOrientation: UIInterfaceOrientation, traitCollection previousTraitCollection: UITraitCollection) {
-        print("Old: \(previousCoordinateSpace), new: \(windowScene.coordinateSpace)")
+        print("Old: \(previousCoordinateSpace.bounds), new: \(windowScene.coordinateSpace.bounds)")
     }
 }
 
