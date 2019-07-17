@@ -31,6 +31,14 @@ class AppKitPrincipal: NSObject, AppKitObjcBridge {
     @objc private func didSelectFromPopup(_ sender: NSPopUpButton) {
         self.bridge.didSelectDetailType(sender.titleOfSelectedItem ?? "")
     }
+
+    func setDefaultCursor() {
+        NSCursor.arrow.set()
+    }
+
+    func setPointerCursor() {
+        NSCursor.pointingHand.set()
+    }
 }
 
 class DetailTypeToolbarItem: NSToolbarItem {

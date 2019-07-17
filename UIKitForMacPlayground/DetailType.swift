@@ -15,6 +15,7 @@ enum DetailType: String, CaseIterable {
     case dragAndDrop = "Drag and drop"
     case touchBar = "Touch bar"
     case contextMenus = "Context menus"
+    case cursors = "Cursors"
 }
 
 @objc protocol UIKitBridge {

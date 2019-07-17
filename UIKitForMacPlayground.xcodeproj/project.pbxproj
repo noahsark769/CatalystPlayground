@@ -14,6 +14,7 @@
 		A116369422C520AF0020072C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A116369322C520AF0020072C /* Assets.xcassets */; };
 		A116369722C520AF0020072C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A116369522C520AF0020072C /* LaunchScreen.storyboard */; };
 		A1A1A69322CB0D97003B81A7 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A1A69222CB0D97003B81A7 /* ListViewController.swift */; };
+		A1A6DF5722DF7E6A001A3734 /* CursorsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A6DF5622DF7E6A001A3734 /* CursorsViewController.swift */; };
 		A1D8877722DC3D3B007C73ED /* SquareSceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1D8877622DC3D3B007C73ED /* SquareSceneDelegate.swift */; };
 		A1D8879A22DCA178007C73ED /* HashableIdGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1D8879922DCA178007C73ED /* HashableIdGenerator.swift */; };
 		A1D8879C22DCA1AA007C73ED /* ExamplesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1D8879B22DCA1AA007C73ED /* ExamplesViewController.swift */; };
@@ -72,6 +73,7 @@
 		A116369822C520AF0020072C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A116369E22C520E00020072C /* UIKitForMacPlayground.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = UIKitForMacPlayground.entitlements; sourceTree = "<group>"; };
 		A1A1A69222CB0D97003B81A7 /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
+		A1A6DF5622DF7E6A001A3734 /* CursorsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CursorsViewController.swift; path = ../../../../../System/Volumes/Data/Users/noahgilmore/code/UIKitForMacPlayground/UIKitForMacPlayground/CursorsViewController.swift; sourceTree = "<group>"; };
 		A1D8877622DC3D3B007C73ED /* SquareSceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SquareSceneDelegate.swift; sourceTree = "<group>"; };
 		A1D8879922DCA178007C73ED /* HashableIdGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HashableIdGenerator.swift; sourceTree = "<group>"; };
 		A1D8879B22DCA1AA007C73ED /* ExamplesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExamplesViewController.swift; sourceTree = "<group>"; };
@@ -181,6 +183,7 @@
 				A1D887C622DE06EF007C73ED /* TouchBarViewController.swift */,
 				A1D887C822DE0D78007C73ED /* ContextMenuViewController.swift */,
 				A1D887CA22DE3670007C73ED /* DetailType.swift */,
+				A1A6DF5622DF7E6A001A3734 /* CursorsViewController.swift */,
 			);
 			path = UIKitForMacPlayground;
 			sourceTree = "<group>";
@@ -360,6 +363,7 @@
 				A1D887CB22DE3670007C73ED /* DetailType.swift in Sources */,
 				A1D887AA22DCB167007C73ED /* DragExampleView.swift in Sources */,
 				A1D8879A22DCA178007C73ED /* HashableIdGenerator.swift in Sources */,
+				A1A6DF5722DF7E6A001A3734 /* CursorsViewController.swift in Sources */,
 				A116368D22C520AD0020072C /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

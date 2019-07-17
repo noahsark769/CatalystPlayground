@@ -88,6 +88,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             return TouchBarViewController()
         case .contextMenus:
             return ContextMenuViewController()
+        case .cursors:
+            return CursorsViewController()
         default:
             return ViewController()
         }

@@ -18,6 +18,8 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)moveWindowRight;
 - (NSToolbarItem *)customToolbarItemWithIdentifier:(NSString *)identifier callback:(void (^)(NSString *))callback NS_SWIFT_NAME(customToolbarItem(identifier:callback:));
 - (void)setUIKitBridge:(id<UIKitBridge>)bridge;
+- (void)setPointerCursor;
+- (void)setDefaultCursor;
 
 @end
 
