@@ -10,6 +10,7 @@ import UIKit
 #if targetEnvironment(macCatalyst)
 import AppKit
 #endif
+import SwiftUI
 
 // Hacky stuff as per https://stackoverflow.com/questions/27243158/hiding-the-master-view-controller-with-uisplitviewcontroller-in-ios8
 extension UISplitViewController {
@@ -96,6 +97,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             return ContextMenuViewController()
         case .cursors:
             return CursorsViewController()
+        case .swiftUI:
+            return UIHostingController(rootView: SwiftUIView())
         default:
             return ViewController()
         }

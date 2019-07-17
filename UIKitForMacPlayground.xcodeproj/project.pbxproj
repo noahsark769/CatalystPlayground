@@ -15,6 +15,7 @@
 		A1A1A69322CB0D97003B81A7 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A1A69222CB0D97003B81A7 /* ListViewController.swift */; };
 		A1A568FC22DFD4900045DF86 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A116368C22C520AD0020072C /* SceneDelegate.swift */; };
 		A1A568FD22DFD7020045DF86 /* UIKitForMacPlaygroundSupportingBundle.bundle in Embed PlugIns */ = {isa = PBXBuildFile; fileRef = A1D887B122DCC874007C73ED /* UIKitForMacPlaygroundSupportingBundle.bundle */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		A1A5690222DFDBE80045DF86 /* SwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A5690122DFDBE80045DF86 /* SwiftUIView.swift */; };
 		A1A6DF5722DF7E6A001A3734 /* CursorsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A6DF5622DF7E6A001A3734 /* CursorsViewController.swift */; };
 		A1D8877722DC3D3B007C73ED /* SquareSceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1D8877622DC3D3B007C73ED /* SquareSceneDelegate.swift */; };
 		A1D8879A22DCA178007C73ED /* HashableIdGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1D8879922DCA178007C73ED /* HashableIdGenerator.swift */; };
@@ -73,6 +74,7 @@
 		A116369822C520AF0020072C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A116369E22C520E00020072C /* UIKitForMacPlayground.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = UIKitForMacPlayground.entitlements; sourceTree = "<group>"; };
 		A1A1A69222CB0D97003B81A7 /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
+		A1A5690122DFDBE80045DF86 /* SwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SwiftUIView.swift; path = ../../../../../System/Volumes/Data/Users/noahgilmore/code/UIKitForMacPlayground/UIKitForMacPlayground/SwiftUIView.swift; sourceTree = "<group>"; };
 		A1A6DF5622DF7E6A001A3734 /* CursorsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CursorsViewController.swift; path = ../../../../../System/Volumes/Data/Users/noahgilmore/code/UIKitForMacPlayground/UIKitForMacPlayground/CursorsViewController.swift; sourceTree = "<group>"; };
 		A1D8877622DC3D3B007C73ED /* SquareSceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SquareSceneDelegate.swift; sourceTree = "<group>"; };
 		A1D8879922DCA178007C73ED /* HashableIdGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HashableIdGenerator.swift; sourceTree = "<group>"; };
@@ -184,6 +186,7 @@
 				A1D887C822DE0D78007C73ED /* ContextMenuViewController.swift */,
 				A1D887CA22DE3670007C73ED /* DetailType.swift */,
 				A1A6DF5622DF7E6A001A3734 /* CursorsViewController.swift */,
+				A1A5690122DFDBE80045DF86 /* SwiftUIView.swift */,
 			);
 			path = UIKitForMacPlayground;
 			sourceTree = "<group>";
@@ -346,6 +349,7 @@
 			files = (
 				A1D887A422DCA275007C73ED /* HoverExampleView.swift in Sources */,
 				A1D887A822DCB108007C73ED /* DragAndDropViewController.swift in Sources */,
+				A1A5690222DFDBE80045DF86 /* SwiftUIView.swift in Sources */,
 				A116368F22C520AD0020072C /* ViewController.swift in Sources */,
 				A1D887C722DE06EF007C73ED /* TouchBarViewController.swift in Sources */,
 				A1D8879E22DCA1F6007C73ED /* HeaderView.swift in Sources */,
