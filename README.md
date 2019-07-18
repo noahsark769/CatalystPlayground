@@ -1,2 +1,2 @@
-# UIKitForMacPlayground
-An example project demonstrating UIKitForMac features
+# Catalyst Playground
+An example project demonstrating Mac Catalyst features
