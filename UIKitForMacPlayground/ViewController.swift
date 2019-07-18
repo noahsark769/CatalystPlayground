@@ -30,15 +30,20 @@ class ViewController: ExamplesViewController {
         self.view.backgroundColor = generateRandomColor()
     }
 
-    override var keyCommands: [UIKeyCommand]? {
-        return [
-            UIKeyCommand(
-                input: "R",
-                modifierFlags: [.command],
-                action: #selector(ViewController.testSelected(_:))
-            )
-        ]
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        UIMenuSystem.main.setNeedsRebuild()
     }
+
+//    override var keyCommands: [UIKeyCommand]? {
+//        return [
+//            UIKeyCommand(
+//                input: "R",
+//                modifierFlags: [.command],
+//                action: #selector(ViewController.testSelected(_:))
+//            )
+//        ]
+//    }
 
     override var canBecomeFirstResponder: Bool {
         return true
@@ -46,6 +51,32 @@ class ViewController: ExamplesViewController {
 
     @objc private func testSelected(_ sender: AppDelegate) {
         self.view.backgroundColor = generateRandomColor()
+    }
+
+    override func buildMenu(with builder: UIMenuBuilder) {
+        super.buildMenu(with: builder)
+
+        let command = UIKeyCommand(
+            input: "Y",
+            modifierFlags: [.command],
+            action: #selector(self.testSelected(_:))
+        )
+        command.title = "Change colors"
+
+        let noShortcutCommand = UICommand(
+            __title: "No shortcut",
+            image: nil,
+            action: #selector(self.testSelected),
+            propertyList: nil
+        )
+
+        builder.insertChild(UIMenu(
+            __title: "Jump",
+            image: nil,
+            identifier: UIMenu.Identifier(rawValue: "com.noahgilmore.uikitformacplaygroud.changecolor"),
+            options: [],
+            children: [command, noShortcutCommand]
+        ), atEndOfMenu: .file)
     }
 }
 
