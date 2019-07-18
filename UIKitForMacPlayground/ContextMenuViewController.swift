@@ -26,7 +26,7 @@ final class ContextMenuViewController: ExamplesViewController {
 extension ContextMenuViewController: UIContextMenuInteractionDelegate {
     func contextMenuInteraction(_ interaction: UIContextMenuInteraction, configurationForMenuAtLocation location: CGPoint) -> UIContextMenuConfiguration? {
         return UIContextMenuConfiguration(identifier: nil, previewProvider: nil, actionProvider: { suggestedActions in
-            return UIMenu(__title: "Menu", image: nil, identifier: nil, children: [
+            return UIMenu(title: "Menu", image: nil, identifier: nil, children: [
                 UIAction(__title: "Change to random color", image: UIImage(systemName: "square.and.arrow.up"), identifier: UIAction.Identifier(rawValue: "open"), handler: { action in
                     self.colorView.color = generateRandomColor()
                 }),
