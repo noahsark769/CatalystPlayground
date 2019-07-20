@@ -8,7 +8,9 @@
 
 #import <Foundation/Foundation.h>
 
+#if TARGET_OS_MACCATALYST || IS_APPKIT_BUNDLE
 #import <AppKit/AppKit.h>
+#endif
 
 @protocol UIKitBridge;
 
@@ -17,7 +19,9 @@ NS_ASSUME_NONNULL_BEGIN
 @protocol AppKitObjcBridge <NSObject>
 
 - (void)moveWindowRight;
+#if TARGET_OS_MACCATALYST || IS_APPKIT_BUNDLE
 - (NSToolbarItem *)customToolbarItemWithIdentifier:(NSString *)identifier callback:(void (^)(NSString *))callback NS_SWIFT_NAME(customToolbarItem(identifier:callback:));
+#endif
 - (void)setUIKitBridge:(id<UIKitBridge>)bridge;
 - (void)setPointerCursor;
 - (void)setDefaultCursor;

@@ -35,15 +35,15 @@ class ViewController: ExamplesViewController {
         UIMenuSystem.main.setNeedsRebuild()
     }
 
-//    override var keyCommands: [UIKeyCommand]? {
-//        return [
-//            UIKeyCommand(
-//                input: "R",
-//                modifierFlags: [.command],
-//                action: #selector(ViewController.testSelected(_:))
-//            )
-//        ]
-//    }
+    override var keyCommands: [UIKeyCommand]? {
+        return [
+            UIKeyCommand(
+                input: "R",
+                modifierFlags: [.command],
+                action: #selector(ViewController.testSelected(_:))
+            )
+        ]
+    }
 
     override var canBecomeFirstResponder: Bool {
         return true

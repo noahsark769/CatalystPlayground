@@ -143,6 +143,7 @@ extension SceneDelegate: UISplitViewControllerDelegate {
     }
 }
 
+#if targetEnvironment(macCatalyst)
 extension SceneDelegate: NSToolbarDelegate {
     var identifiers: [NSToolbarItem.Identifier] {
         return [NSToolbarItem.Identifier(rawValue: "test"), .flexibleSpace, NSToolbarItem.Identifier(rawValue: "other")]
@@ -182,3 +183,4 @@ extension SceneDelegate: NSToolbarDelegate {
         UIApplication.shared.requestSceneSessionActivation(nil, userActivity: nil, options: nil, errorHandler: nil)
     }
 }
+#endif
