@@ -99,11 +99,13 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             return CursorsViewController()
         case .swiftUI:
             return UIHostingController(rootView: SwiftUIView())
+        case .openFile:
+            return OpenFileViewController()
         default:
             return ViewController()
         }
     }
-
+    
     func sceneDidDisconnect(_ scene: UIScene) {
         // Called as the scene is being released by the system.
         // This occurs shortly after the scene enters the background, or when its session is discarded.

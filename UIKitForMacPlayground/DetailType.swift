@@ -17,6 +17,7 @@ enum DetailType: String, CaseIterable {
     case contextMenus = "Context menus"
     case cursors = "Cursors"
     case swiftUI = "SwiftUI"
+    case openFile = "Opening files"
 }
 
 @objc protocol UIKitBridge {
