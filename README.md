@@ -14,4 +14,4 @@ xed .
 
 Then click the run button!
 
-(Note that the project compiles on Mac and on iPad, but some features like the toolbar and appkit bundle bridging are nont available on iPad)
+(Note that the project compiles on Mac and on iPad, but some features like the toolbar and appkit bundle bridging are not available on iPad)
