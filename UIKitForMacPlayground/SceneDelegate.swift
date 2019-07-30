@@ -101,6 +101,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             return UIHostingController(rootView: SwiftUIView())
         case .openFile:
             return OpenFileViewController()
+        case .notifications:
+            return NotificationsViewController()
         default:
             return ViewController()
         }

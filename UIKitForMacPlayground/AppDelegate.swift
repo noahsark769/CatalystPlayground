@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import UserNotifications
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -23,6 +24,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let loader = AppKitBundleLoader()
         bridge = loader.load(bundle)
         bridge?.setUIKit(self)
+
+        UNUserNotificationCenter.current().delegate = self
+
         return true
     }
 
@@ -135,6 +139,13 @@ extension UIResponder {
 
     static func currentWindowScene() -> UIWindowScene? {
         return firstResponder()?.containingScene
+    }
+}
+
+extension AppDelegate: UNUserNotificationCenterDelegate {
+    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+        // Allows displaying rich notifications even while the app is in the foreground
+        completionHandler([.alert, .badge, .sound])
     }
 }
 

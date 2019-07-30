@@ -44,6 +44,14 @@ class AppKitPrincipal: NSObject, AppKitObjcBridge {
     func sceneBecameActive(identifier: String) {
         self.windowManager.sceneBecameActive(identifier: identifier)
     }
+
+    func showUserNotification() {
+        let notification = NSUserNotification()
+        notification.title = "This is a notification"
+        notification.subtitle = "This is a subtitle"
+        notification.identifier = "test"
+        NSUserNotificationCenter.default.deliver(notification)
+    }
 }
 
 class DetailTypeToolbarItem: NSToolbarItem {

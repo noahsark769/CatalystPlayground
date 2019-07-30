@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import MobileCoreServices
 
 class OpenFileViewController: ExamplesViewController {
     private lazy var imageView: UIImageView = {
