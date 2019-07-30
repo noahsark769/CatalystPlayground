@@ -67,6 +67,7 @@ class ExamplesViewController: AppKitWindowReportingViewController {
                 button.tag = uid
                 button.addTarget(self, action: #selector(didTapButton(_:)), for: .touchUpInside)
                 button.setTitleColor(color, for: .normal)
+                button.addGestureRecognizer(CursorPointerGestureRecognizer())
                 buttonUUIDHashValuesToActions[uid] = didTap
                 stackView.addArrangedSubview(button)
             case let .view(view):
