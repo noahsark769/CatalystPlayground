@@ -11,8 +11,8 @@
 		78646C4E22E87D2200B29FE7 /* (null) in Sources */ = {isa = PBXBuildFile; };
 		A1147A2322F030C8003DC870 /* UIKitForMacPlaygroundSupportingBundle.bundle in Embed PlugIns */ = {isa = PBXBuildFile; fileRef = A1D887B122DCC874007C73ED /* UIKitForMacPlaygroundSupportingBundle.bundle */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		A1147A2522F03713003DC870 /* NotificationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1147A2422F03713003DC870 /* NotificationsViewController.swift */; };
-		A1147A2822F0386B003DC870 /* SwiftUIView copy.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1147A2622F0386B003DC870 /* SwiftUIView copy.swift */; };
-		A1147A2922F0386B003DC870 /* CursorsViewController copy.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1147A2722F0386B003DC870 /* CursorsViewController copy.swift */; };
+		A1147A2922F0386B003DC870 /* CursorsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1147A2722F0386B003DC870 /* CursorsViewController.swift */; };
+		A1147A2D22F08F6D003DC870 /* SwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1147A2C22F08F6C003DC870 /* SwiftUIView.swift */; };
 		A116117322D003B000251B87 /* WindowsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A116117222D003B000251B87 /* WindowsViewController.swift */; };
 		A116368B22C520AD0020072C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A116368A22C520AD0020072C /* AppDelegate.swift */; };
 		A116368F22C520AD0020072C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A116368E22C520AD0020072C /* ViewController.swift */; };
@@ -69,8 +69,8 @@
 		417486A30CE1D0BCFC3EB3F4 /* Pods-UIKitForMacPlayground.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UIKitForMacPlayground.release.xcconfig"; path = "Target Support Files/Pods-UIKitForMacPlayground/Pods-UIKitForMacPlayground.release.xcconfig"; sourceTree = "<group>"; };
 		67B3C60BFC993E73C93CC8E0 /* Pods_UIKitForMacPlayground.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UIKitForMacPlayground.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A1147A2422F03713003DC870 /* NotificationsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationsViewController.swift; sourceTree = "<group>"; };
-		A1147A2622F0386B003DC870 /* SwiftUIView copy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SwiftUIView copy.swift"; sourceTree = "<group>"; };
-		A1147A2722F0386B003DC870 /* CursorsViewController copy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CursorsViewController copy.swift"; sourceTree = "<group>"; };
+		A1147A2722F0386B003DC870 /* CursorsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CursorsViewController.swift; sourceTree = "<group>"; };
+		A1147A2C22F08F6C003DC870 /* SwiftUIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftUIView.swift; sourceTree = "<group>"; };
 		A116117222D003B000251B87 /* WindowsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowsViewController.swift; sourceTree = "<group>"; };
 		A116368722C520AD0020072C /* UIKitForMacPlayground.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UIKitForMacPlayground.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A116368A22C520AD0020072C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -165,8 +165,8 @@
 		A116368922C520AD0020072C /* UIKitForMacPlayground */ = {
 			isa = PBXGroup;
 			children = (
-				A1147A2622F0386B003DC870 /* SwiftUIView copy.swift */,
-				A1147A2722F0386B003DC870 /* CursorsViewController copy.swift */,
+				A1147A2C22F08F6C003DC870 /* SwiftUIView.swift */,
+				A1147A2722F0386B003DC870 /* CursorsViewController.swift */,
 				A116369E22C520E00020072C /* UIKitForMacPlayground.entitlements */,
 				A116368A22C520AD0020072C /* AppDelegate.swift */,
 				A116368C22C520AD0020072C /* SceneDelegate.swift */,
@@ -345,14 +345,14 @@
 				A1147A2522F03713003DC870 /* NotificationsViewController.swift in Sources */,
 				A1D8879E22DCA1F6007C73ED /* HeaderView.swift in Sources */,
 				A1D887A622DCA299007C73ED /* ColorView.swift in Sources */,
-				A1147A2922F0386B003DC870 /* CursorsViewController copy.swift in Sources */,
+				A1147A2922F0386B003DC870 /* CursorsViewController.swift in Sources */,
 				A116368B22C520AD0020072C /* AppDelegate.swift in Sources */,
+				A1147A2D22F08F6D003DC870 /* SwiftUIView.swift in Sources */,
 				A1D887A022DCA20B007C73ED /* UserActivities.swift in Sources */,
 				A1A568FC22DFD4900045DF86 /* SceneDelegate.swift in Sources */,
 				A1A1A69322CB0D97003B81A7 /* ListViewController.swift in Sources */,
 				A1D887C522DD308C007C73ED /* AppKitBundleLoader.m in Sources */,
 				A116117322D003B000251B87 /* WindowsViewController.swift in Sources */,
-				A1147A2822F0386B003DC870 /* SwiftUIView copy.swift in Sources */,
 				A1D8877722DC3D3B007C73ED /* SquareSceneDelegate.swift in Sources */,
 				A1D887A222DCA24E007C73ED /* HoverViewController.swift in Sources */,
 				A1D8879C22DCA1AA007C73ED /* ExamplesViewController.swift in Sources */,
