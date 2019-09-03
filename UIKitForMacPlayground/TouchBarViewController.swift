@@ -8,6 +8,10 @@
 
 import Foundation
 
+#if targetEnvironment(macCatalyst)
+import AppKit
+#endif
+
 final class TouchBarViewController: ExamplesViewController {
     let colorView = ColorView(color: .red, dimension: 100)
 
@@ -18,13 +22,9 @@ final class TouchBarViewController: ExamplesViewController {
         ]
         super.viewDidLoad()
     }
-}
 
-#if targetEnvironment(macCatalyst)
-import AppKit
-
-extension TouchBarViewController: NSTouchBarProvider {
-    var touchBar: NSTouchBar? {
+    #if targetEnvironment(macCatalyst)
+    override func makeTouchBar() -> NSTouchBar? {
         let bar = NSTouchBar()
         let buttonIdentifier = NSTouchBarItem.Identifier(rawValue: "clickme")
         let colorIdentifier = NSTouchBarItem.Identifier(rawValue: "color")
@@ -54,5 +54,5 @@ extension TouchBarViewController: NSTouchBarProvider {
     @objc private func didPickColor(_ sender: NSColorPickerTouchBarItem) {
         self.colorView.color = sender.color
     }
+    #endif
 }
-#endif

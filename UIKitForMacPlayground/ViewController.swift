@@ -78,12 +78,9 @@ class ViewController: ExamplesViewController {
             children: [command, noShortcutCommand]
         ), atEndOfMenu: .file)
     }
-}
 
-#if targetEnvironment(macCatalyst)
-extension ViewController: NSTouchBarProvider {
-    var touchBar: NSTouchBar? {
-        //        return nil
+    #if targetEnvironment(macCatalyst)
+    override func makeTouchBar() -> NSTouchBar? {
         let bar = NSTouchBar()
         let identifier = NSTouchBarItem.Identifier(rawValue: "clickme")
         bar.defaultItemIdentifiers = [identifier]
@@ -101,5 +98,5 @@ extension ViewController: NSTouchBarProvider {
     @objc private func didTapClickMe(_ sender: NSTouchBarItem) {
         print("Click me!!!")
     }
+    #endif
 }
-#endif

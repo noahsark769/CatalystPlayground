@@ -32,7 +32,7 @@ final class ListViewController: UITableViewController {
             return cell
         }
 
-        let snapshot = NSDiffableDataSourceSnapshot<Section, DetailType>()
+        var snapshot = NSDiffableDataSourceSnapshot<Section, DetailType>()
         snapshot.appendSections([.main])
         snapshot.appendItems(DetailType.allCases)
         dataSource.apply(snapshot)
