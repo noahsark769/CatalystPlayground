@@ -64,14 +64,14 @@ class ViewController: ExamplesViewController {
         command.title = "Change colors"
 
         let noShortcutCommand = UICommand(
-            __title: "No shortcut",
+            title: "No shortcut",
             image: nil,
             action: #selector(self.testSelected),
             propertyList: nil
         )
 
         builder.insertChild(UIMenu(
-            __title: "Jump",
+            title: "Jump",
             image: nil,
             identifier: UIMenu.Identifier(rawValue: "com.noahgilmore.uikitformacplaygroud.changecolor"),
             options: [],

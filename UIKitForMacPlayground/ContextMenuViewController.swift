@@ -27,7 +27,7 @@ extension ContextMenuViewController: UIContextMenuInteractionDelegate {
     func contextMenuInteraction(_ interaction: UIContextMenuInteraction, configurationForMenuAtLocation location: CGPoint) -> UIContextMenuConfiguration? {
         return UIContextMenuConfiguration(identifier: nil, previewProvider: nil, actionProvider: { suggestedActions in
             return UIMenu(title: "Menu", image: nil, identifier: nil, children: [
-                UIAction(__title: "Change to random color", image: UIImage(systemName: "square.and.arrow.up"), identifier: UIAction.Identifier(rawValue: "open"), handler: { action in
+                UIAction(title: "Change to random color", image: UIImage(systemName: "square.and.arrow.up"), identifier: UIAction.Identifier(rawValue: "open"), handler: { action in
                     self.colorView.color = generateRandomColor()
                 }),
                 UIMenu(title: "Predefined colors", image: nil, identifier: nil, children: [
@@ -35,7 +35,7 @@ extension ContextMenuViewController: UIContextMenuInteractionDelegate {
                     (string: "Blue", color: UIColor.systemBlue),
                     (string: "Green", color: UIColor.systemGreen)
                 ].map { config in
-                    UIAction(__title: config.string, image: nil, identifier: UIAction.Identifier(rawValue: "open-\(config.string)"), handler: { action in
+                    UIAction(title: config.string, image: nil, identifier: UIAction.Identifier(rawValue: "open-\(config.string)"), handler: { action in
                         self.colorView.color = config.color
                     })
                 })

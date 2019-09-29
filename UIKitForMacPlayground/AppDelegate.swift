@@ -68,14 +68,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         command.title = "Jump to Windows"
 
         let noShortcutCommand = UICommand(
-            __title: "No shortcut",
+            title: "No shortcut",
             image: nil,
             action: #selector(self.noShortcutSelected),
             propertyList: nil
         )
 
         builder.insertChild(UIMenu(
-            __title: "Jump",
+            title: "Jump",
             image: nil,
             identifier: UIMenu.Identifier(rawValue: "com.noahgilmore.uikitformacplaygroud.jump"),
             options: [],
